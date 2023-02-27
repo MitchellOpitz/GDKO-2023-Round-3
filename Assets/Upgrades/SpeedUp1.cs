@@ -16,7 +16,7 @@ public class SpeedUp1 : Upgrade
     public override void ActivateUpgrade()
     {
         FindObjectOfType<PlayerShoot>().fireRate = fireRate;
-        FindObjectOfType<UpgradesShop>().gameObject.SetActive(false);
-        penaltiesMenu.SetActive(true);
+        Instantiate(penaltiesMenu);
+        Destroy(FindObjectOfType<UpgradesShop>().gameObject);
     }
 }

@@ -8,8 +8,7 @@ public class Boss : MonoBehaviour
 
     public void StartUpgrades()
     {
-
-        upgradesMenu.SetActive(true);
+        Instantiate(upgradesMenu);
         FindObjectOfType<PlayerToggle>().ToggleAbilities(false);
     }
 }

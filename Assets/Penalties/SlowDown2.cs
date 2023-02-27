@@ -16,7 +16,7 @@ public class SlowDown2 : Penalty
     public override void ActivatePenalty()
     {
         Debug.Log("Slowed down to: " + fireRate);
-        FindObjectOfType<PenaltiesShop>().gameObject.SetActive(false);
+        Destroy(FindObjectOfType<PenaltiesShop>().gameObject);
         FindObjectOfType<PlayerToggle>().ToggleAbilities(true);
     }
 }
