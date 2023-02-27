@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,6 +36,10 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         // Do something when the enemy dies
+        if (gameObject.GetComponent<Boss>())
+        {
+            gameObject.GetComponent<Boss>().StartUpgrades();
+        }
         Destroy(gameObject);
     }
 }

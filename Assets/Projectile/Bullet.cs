@@ -22,12 +22,20 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // check if the object is an enemy with the Dummy script attached
-        Dummy enemy = collision.GetComponent<Dummy>();
-        if (enemy != null)
+        if (collision.tag == "Dummy")
         {
-            // apply damage to the enemy and destroy the bullet
+            Dummy enemy = collision.GetComponent<Dummy>();
             enemy.TakeDamage(damage);
             Destroy(gameObject);
+        } else
+        {
+            // check if the object is an enemy with the Dummy script attached
+            if (collision.tag == "Enemy")
+            {
+                EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+                enemy.TakeDamage(damage);
+                Destroy(gameObject);
+            }
         }
     }
 }
