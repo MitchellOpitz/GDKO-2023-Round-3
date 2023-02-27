@@ -5,6 +5,22 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f; // The player's movement speed
     public Animator animator;
 
+    // Variables for clamping movement
+    public Camera mainCamera;
+    private float cameraXMin, cameraXMax, cameraYMin, cameraYMax;
+
+    void Start()
+    {
+        // Get the camera clamping values from the Camera script
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        float halfWidth = spriteRenderer.bounds.size.x / 2.0f;
+        float halfHeight = spriteRenderer.bounds.size.y / 2.0f;
+        cameraXMin = mainCamera.GetComponent<CameraMovement>().cameraXMin + halfWidth;
+        cameraXMax = mainCamera.GetComponent<CameraMovement>().cameraXMax - halfWidth;
+        cameraYMin = mainCamera.GetComponent<CameraMovement>().cameraYMin + halfHeight;
+        cameraYMax = mainCamera.GetComponent<CameraMovement>().cameraYMax - halfHeight;
+    }
+
     void Update()
     {
         // Get input values for movement on the X and Z axes
@@ -27,5 +43,15 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Speed", 0f);
         }
+
+        ClampMovement();
+    }
+
+    void ClampMovement()
+    {
+        // Clamp player movement to camera clamping values
+        float clampedX = Mathf.Clamp(transform.position.x, cameraXMin, cameraXMax);
+        float clampedY = Mathf.Clamp(transform.position.y, cameraYMin, cameraYMax);
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 }
