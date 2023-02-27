@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UpgradeShop : MonoBehaviour
+public class UpgradesShop : MonoBehaviour
 {
     public GameObject upgradePanel1;
     public GameObject upgradePanel2;
