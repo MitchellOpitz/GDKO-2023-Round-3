@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     public int damage = 5;
+    public Vector3 direction;
 
     private Rigidbody2D rb;
     private Camera mainCamera;
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        transform.position += direction * speed * Time.deltaTime;
 
         if (transform.position.x < cameraXMin - destroyDistance ||
             transform.position.x > cameraXMax + destroyDistance ||

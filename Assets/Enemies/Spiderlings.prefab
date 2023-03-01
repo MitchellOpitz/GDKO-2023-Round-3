@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &208719742026999169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7110407865062269740}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7110407865062269740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208719742026999169}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4882892467470893997}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4882892467401767961
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,13 +113,12 @@ GameObject:
   - component: {fileID: 4882892467470893996}
   - component: {fileID: 4882892467470893995}
   - component: {fileID: 4882892467470893994}
-  - component: {fileID: 4882892467470893998}
   - component: {fileID: 4882892467470893999}
   - component: {fileID: -349282362806373162}
-  - component: {fileID: 4573854544696069073}
   - component: {fileID: 1617631301}
+  - component: {fileID: 7674377124242888803}
   m_Layer: 0
-  m_Name: Boss1
+  m_Name: Spiderlings
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,10 +133,9 @@ Transform:
   m_GameObject: {fileID: 4882892467470893993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.81, y: -2.94, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4882892467401767962}
-  - {fileID: 7110407865062269740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -259,19 +227,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4882892467470893998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4882892467470893993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f85cdc0fdc64a64188f4577eaf59d81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradesMenu: {fileID: 6500389457612694776, guid: 59796df2d7a212a44a82ce24f9f657aa, type: 3}
 --- !u!114 &4882892467470893999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb11a7db75b51c4c882ae305eea1f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 15
   currentHealth: 0
   healthBarImage: {fileID: 4882892467881490810}
 --- !u!114 &-349282362806373162
@@ -300,25 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 4882892467881490810}
-  firePoint: {fileID: 7110407865062269740}
---- !u!114 &4573854544696069073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4882892467470893993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b02e742ccbda046b754d38353872ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  moveDuration: 2
-  pauseTime: 2
-  bulletPrefab: {fileID: 1721257063650758883, guid: a9cbac9fbde53994495c9b5b305e0116, type: 3}
-  firePoint: {fileID: 7110407865062269740}
-  minion: {fileID: 4882892467470893993, guid: ef6e46d1af77a5f4384beab6f6dc0588, type: 3}
+  firePoint: {fileID: 0}
 --- !u!95 &1617631301
 Animator:
   serializedVersion: 3
@@ -338,6 +275,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7674377124242888803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882892467470893993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817686f820ca732419ade6185645566f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &4882892467881490808
 GameObject:
   m_ObjectHideFlags: 0

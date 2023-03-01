@@ -7,6 +7,8 @@ public class PlayerShoot : MonoBehaviour
     public float projectileSpeed = 10f;
     public float fireRate = 0.5f;
 
+    public Animator animator;
+
     private float nextFireTime = 0f;
 
     void Update()

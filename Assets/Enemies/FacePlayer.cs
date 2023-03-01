@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class FacePlayer : MonoBehaviour
 {
     public Image healthBar;
+    public Transform firePoint;
 
     private Transform player;
 
@@ -25,6 +26,7 @@ public class FacePlayer : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             healthBar.transform.rotation = Quaternion.Euler(0, 0, 0);
+            healthBar.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
