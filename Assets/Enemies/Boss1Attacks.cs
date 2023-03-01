@@ -11,8 +11,6 @@ public class Boss1Attacks : MonoBehaviour
     public Transform firePoint;
     public GameObject minion;
 
-    private EnemyHealth health;
-    private int phase;
     private bool waiting;
     private Vector3 playerDirection;
     private Transform player;
@@ -23,17 +21,14 @@ public class Boss1Attacks : MonoBehaviour
     {
         p2AttackNumber = 1;
         p3AttackNumber = 1;
-        phase = 1;
         waiting = false;
         player = GameObject.Find("Player").transform;
-        health = GetComponent<EnemyHealth>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        PhaseCheck();
-        switch (phase)
+    {        
+        switch (GetComponent<Phases>().PhaseCheck())
         {
             case 1:
                 Phase1Attack();
@@ -44,22 +39,6 @@ public class Boss1Attacks : MonoBehaviour
             case 3:
                 Phase3();
                 break;
-        }
-    }
-
-    private void PhaseCheck()
-    {
-        float healthPercent = (float)health.currentHealth / (float)health.maxHealth;
-
-        if (healthPercent < .33f)
-        {
-            phase = 3;
-        } else if (healthPercent < .66f)
-        {
-            phase = 2;
-        } else
-        {
-            phase = 1;
         }
     }
 
