@@ -38,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
         // Do something when the enemy dies
         if (gameObject.GetComponent<Boss>())
         {
+            FindObjectOfType<AudioManager>().FadeOut(3f); // For test purposes.
             gameObject.GetComponent<Boss>().StartUpgrades();
         }
         Destroy(gameObject);
