@@ -7,6 +7,8 @@ public class Upgrade : MonoBehaviour
     public string upgradeName;
     public string description;
     public GameObject penaltiesMenu;
+    public int currentRank = 0;
+    public int maxRank;
 
     public virtual void ActivateUpgrade()
     {

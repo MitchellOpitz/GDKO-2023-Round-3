@@ -1208,7 +1208,7 @@ GameObject:
   - component: {fileID: 6500389457612694753}
   - component: {fileID: 6500389457612694754}
   - component: {fileID: 6500389457612694752}
-  - component: {fileID: 6500389457612694755}
+  - component: {fileID: 6751498323413251487}
   m_Layer: 5
   m_Name: Upgrades
   m_TagString: Untagged
@@ -1313,9 +1313,9 @@ MonoBehaviour:
   upgradePanel2: {fileID: 6500389457887510029}
   upgradePanel3: {fileID: 6500389457092853591}
   upgrades:
+  - {fileID: 6751498323413251487}
   - {fileID: 6500389457612694754}
   - {fileID: 6500389457612694752}
-  - {fileID: 6500389457612694755}
 --- !u!114 &6500389457612694754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,6 +1331,8 @@ MonoBehaviour:
   upgradeName: Fire Rate Up
   description: Increases fire rate to 1
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 5
   fireRate: 1
 --- !u!114 &6500389457612694752
 MonoBehaviour:
@@ -1347,8 +1349,10 @@ MonoBehaviour:
   upgradeName: Fire Rate Up
   description: Increases fire rate to 0.2
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 5
   fireRate: 0.2
---- !u!114 &6500389457612694755
+--- !u!114 &6751498323413251487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1357,13 +1361,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6500389457612694776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a849e1d3c43441e4882bdbd44cb1000f, type: 3}
+  m_Script: {fileID: 11500000, guid: 394c4dafc6e26984e9d409fd6d995795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeName: Fire Rate Up
-  description: Increases fire rate to 0.05
+  description: Increases fire rate by 10%
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
-  fireRate: 0.05
+  currentRank: 0
+  maxRank: 5
+  fireRate: 0.1
 --- !u!1 &6500389457669040001
 GameObject:
   m_ObjectHideFlags: 0

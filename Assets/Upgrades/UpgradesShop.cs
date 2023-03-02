@@ -14,10 +14,11 @@ public class UpgradesShop : MonoBehaviour
     private Upgrade upgrade2;
     private Upgrade upgrade3;
 
+    private PlayerManager playerManager;
+
     void OnEnable()
     {
         GetUpgrades();
-
     }
 
     private void GetUpgrades()
@@ -45,7 +46,14 @@ public class UpgradesShop : MonoBehaviour
     private Upgrade RollAbility()
     {
         float randomNumber = Mathf.Floor(Random.Range(0f, upgrades.Length));
-        return upgrades[(int)randomNumber];
+        playerManager = GameObject.Find("UpgradeHolder").GetComponent<PlayerManager>();
+        if (playerManager.upgrades[(int)randomNumber].currentRank != upgrades[(int)randomNumber].maxRank)
+        {
+            return upgrades[(int)randomNumber];
+        } else
+        {
+            return RollAbility();
+        }
     }
 
     private void UpdatePanel(int panel, Upgrade upgrade)
