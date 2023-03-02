@@ -431,6 +431,7 @@ MonoBehaviour:
   projectileSpeed: 10
   fireRate: 0.5
   damage: 5
+  upgradeRank: 0
   animator: {fileID: 249016240}
 --- !u!114 &249016246
 MonoBehaviour:
@@ -564,6 +565,7 @@ GameObject:
   - component: {fileID: 828153195}
   - component: {fileID: 828153198}
   - component: {fileID: 828153197}
+  - component: {fileID: 828153200}
   m_Layer: 0
   m_Name: UpgradeHolder
   m_TagString: Untagged
@@ -587,7 +589,7 @@ MonoBehaviour:
   description: Increases fire rate by 10%
   penaltiesMenu: {fileID: 0}
   currentRank: 0
-  maxRank: 5
+  maxRank: 10
   fireRate: 0.1
 --- !u!4 &828153196
 Transform:
@@ -619,7 +621,7 @@ MonoBehaviour:
   description: Increases movement speed by 10%
   penaltiesMenu: {fileID: 0}
   currentRank: 0
-  maxRank: 5
+  maxRank: 10
 --- !u!114 &828153198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +655,24 @@ MonoBehaviour:
   - {fileID: 828153195}
   - {fileID: 828153198}
   - {fileID: 828153197}
+  - {fileID: 828153200}
+--- !u!114 &828153200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828153194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e8fb50051529f4cb30b3a395542c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Spread Shot Up
+  description: "Increases the number of shots fired 1.  Shots fired in a 10\xB0 spread."
+  penaltiesMenu: {fileID: 0}
+  currentRank: 0
+  maxRank: 5
 --- !u!1 &933489333
 GameObject:
   m_ObjectHideFlags: 0

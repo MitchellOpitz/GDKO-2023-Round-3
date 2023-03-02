@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 6751498323413251487}
   - component: {fileID: 6500389457612694754}
   - component: {fileID: -7540953903354382801}
+  - component: {fileID: 918687779103379318}
   m_Layer: 5
   m_Name: Upgrades
   m_TagString: Untagged
@@ -1316,6 +1317,7 @@ MonoBehaviour:
   - {fileID: 6751498323413251487}
   - {fileID: 6500389457612694754}
   - {fileID: -7540953903354382801}
+  - {fileID: 918687779103379318}
 --- !u!114 &6751498323413251487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,7 +1334,7 @@ MonoBehaviour:
   description: Increases fire rate by 10%
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
   currentRank: 0
-  maxRank: 5
+  maxRank: 10
   fireRate: 0.1
 --- !u!114 &6500389457612694754
 MonoBehaviour:
@@ -1365,6 +1367,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Movement Speed Up
   description: Increases movement speed by 10%
+  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 10
+--- !u!114 &918687779103379318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500389457612694776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e8fb50051529f4cb30b3a395542c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Spread Shot Up
+  description: "Increases the number of shots fired 1.  Shots fired in a 10\xB0 spread."
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
   currentRank: 0
   maxRank: 5

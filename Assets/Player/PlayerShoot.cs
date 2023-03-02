@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public float projectileSpeed = 10f;
     public float fireRate = 0.5f;
     public int damage = 5;
+    public int upgradeRank = 0;
 
     public Animator animator;
 
@@ -29,6 +30,28 @@ public class PlayerShoot : MonoBehaviour
     void Fire(int damageAmount)
     {
         nextFireTime = Time.time + fireRate;
+        Vector3 startPosition = gunTip.position;
+        Quaternion startRotation = Quaternion.Euler(0, 0, gunTip.rotation.eulerAngles.z);
+
+        for (int i = 0; i <= upgradeRank; i++)
+        {
+            float spreadAngle = -10f + (10f * i);
+            Quaternion spreadRotation = Quaternion.Euler(0, 0, gunTip.rotation.eulerAngles.z + spreadAngle);
+            GameObject projectile = Instantiate(projectilePrefab, startPosition, spreadRotation);
+            projectile.GetComponent<Bullet>().damage = damageAmount;
+            projectile.transform.position = new Vector3(projectile.transform.position.x, projectile.transform.position.y, 0f);
+
+            Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
+            projectileRigidbody.velocity = projectile.transform.right * projectileSpeed;
+        }
+    }
+}
+
+/*
+
+    void Fire(int damageAmount)
+    {
+        nextFireTime = Time.time + fireRate;
         GameObject projectile = Instantiate(projectilePrefab, gunTip.position, Quaternion.Euler(0, 0, gunTip.rotation.eulerAngles.z));
         projectile.GetComponent<Bullet>().damage = damageAmount;
         projectile.transform.position = new Vector3(projectile.transform.position.x, projectile.transform.position.y, 0f);
@@ -37,4 +60,4 @@ public class PlayerShoot : MonoBehaviour
         Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
         projectileRigidbody.velocity = gunTip.right * projectileSpeed;
     }
-}
+*/
