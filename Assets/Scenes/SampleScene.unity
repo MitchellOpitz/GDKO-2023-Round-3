@@ -430,6 +430,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1721257063650758883, guid: a9cbac9fbde53994495c9b5b305e0116, type: 3}
   projectileSpeed: 10
   fireRate: 0.5
+  damage: 5
   animator: {fileID: 249016240}
 --- !u!114 &249016246
 MonoBehaviour:
@@ -586,7 +587,7 @@ MonoBehaviour:
   description: Increases fire rate by 10%
   penaltiesMenu: {fileID: 0}
   currentRank: 0
-  maxRank: 0
+  maxRank: 5
   fireRate: 0.1
 --- !u!4 &828153196
 Transform:
@@ -614,12 +615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b0c6171ce11184682e3775229b5437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeName: Fire Rate Up
-  description: Increases fire rate to 0.1
+  upgradeName: Movement Speed Up
+  description: Increases movement speed by 10%
   penaltiesMenu: {fileID: 0}
   currentRank: 0
-  maxRank: 0
-  fireRate: 0.1
+  maxRank: 5
 --- !u!114 &828153198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,12 +632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebddeeb8da475fb4bbea50ef10f8be5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeName: Fire Rate Up
-  description: Increases fire rate to 0.1
+  upgradeName: Damage Up
+  description: Increases damage done by 1
   penaltiesMenu: {fileID: 0}
   currentRank: 0
-  maxRank: 0
-  fireRate: 0.1
+  maxRank: 100
 --- !u!114 &828153199
 MonoBehaviour:
   m_ObjectHideFlags: 0

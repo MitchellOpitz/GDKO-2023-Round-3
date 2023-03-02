@@ -862,9 +862,9 @@ RectTransform:
   m_Father: {fileID: 6500389457669040000}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 675.59625, y: -222.62895}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6500389457092853587
@@ -1206,9 +1206,9 @@ GameObject:
   - component: {fileID: 6500389457612694758}
   - component: {fileID: 6500389457612694759}
   - component: {fileID: 6500389457612694753}
-  - component: {fileID: 6500389457612694754}
-  - component: {fileID: 6500389457612694752}
   - component: {fileID: 6751498323413251487}
+  - component: {fileID: 6500389457612694754}
+  - component: {fileID: -7540953903354382801}
   m_Layer: 5
   m_Name: Upgrades
   m_TagString: Untagged
@@ -1315,43 +1315,7 @@ MonoBehaviour:
   upgrades:
   - {fileID: 6751498323413251487}
   - {fileID: 6500389457612694754}
-  - {fileID: 6500389457612694752}
---- !u!114 &6500389457612694754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500389457612694776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebddeeb8da475fb4bbea50ef10f8be5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradeName: Fire Rate Up
-  description: Increases fire rate to 1
-  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
-  currentRank: 0
-  maxRank: 5
-  fireRate: 1
---- !u!114 &6500389457612694752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500389457612694776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b0c6171ce11184682e3775229b5437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradeName: Fire Rate Up
-  description: Increases fire rate to 0.2
-  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
-  currentRank: 0
-  maxRank: 5
-  fireRate: 0.2
+  - {fileID: -7540953903354382801}
 --- !u!114 &6751498323413251487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,6 +1334,40 @@ MonoBehaviour:
   currentRank: 0
   maxRank: 5
   fireRate: 0.1
+--- !u!114 &6500389457612694754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500389457612694776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebddeeb8da475fb4bbea50ef10f8be5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Damage Up
+  description: Increases damage done by 1
+  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 100
+--- !u!114 &-7540953903354382801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500389457612694776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b0c6171ce11184682e3775229b5437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Movement Speed Up
+  description: Increases movement speed by 10%
+  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 5
 --- !u!1 &6500389457669040001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,9 +1855,9 @@ RectTransform:
   m_Father: {fileID: 6500389457669040000}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405.35773, y: -222.62895}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6500389457887510025
@@ -1956,9 +1954,9 @@ RectTransform:
   m_Father: {fileID: 6500389457669040000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135.11925, y: -222.62895}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6500389457968812628

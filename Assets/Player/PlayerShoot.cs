@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 10f;
     public float fireRate = 0.5f;
+    public int damage = 5;
 
     public Animator animator;
 
@@ -15,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && Time.time > nextFireTime)
         {
-            Fire();
+            Fire(damage);
         }
 
         // Aim the gun towards the mouse cursor
@@ -25,10 +26,11 @@ public class PlayerShoot : MonoBehaviour
         gunTip.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    void Fire()
+    void Fire(int damageAmount)
     {
         nextFireTime = Time.time + fireRate;
         GameObject projectile = Instantiate(projectilePrefab, gunTip.position, Quaternion.Euler(0, 0, gunTip.rotation.eulerAngles.z));
+        projectile.GetComponent<Bullet>().damage = damageAmount;
         projectile.transform.position = new Vector3(projectile.transform.position.x, projectile.transform.position.y, 0f);
 
         // Set the velocity of the projectile based on the gun tip's right vector

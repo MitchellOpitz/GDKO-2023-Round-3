@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
-    public int damage = 5;
+    public int damage = 1;
     public Vector3 direction;
 
     private Rigidbody2D rb;
@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     private float cameraYMin;
     private float cameraYMax;
     private const float destroyDistance = 5f;
+
 
     void Start()
     {
