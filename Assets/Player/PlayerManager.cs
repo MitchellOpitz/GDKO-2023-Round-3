@@ -5,4 +5,5 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public Upgrade[] upgrades;
+    public Penalty[] penalties;
 }

@@ -14,6 +14,8 @@ public class PenaltiesShop : MonoBehaviour
     private Penalty penalty2;
     private Penalty penalty3;
 
+    private PlayerManager playerManager;
+
     void OnEnable()
     {
         GetPenalties();
@@ -45,7 +47,15 @@ public class PenaltiesShop : MonoBehaviour
     private Penalty RollAbility()
     {
         float randomNumber = Mathf.Floor(Random.Range(0f, penalties.Length));
-        return penalties[(int)randomNumber];
+        playerManager = GameObject.Find("PenaltyHolder").GetComponent<PlayerManager>();
+        if (playerManager.penalties[(int)randomNumber].currentRank != penalties[(int)randomNumber].maxRank)
+        {
+            return penalties[(int)randomNumber];
+        }
+        else
+        {
+            return RollAbility();
+        }
     }
 
     private void UpdatePanel(int panel, Penalty penalty)

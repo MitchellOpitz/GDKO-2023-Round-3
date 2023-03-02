@@ -1293,9 +1293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d15bab93ab3c84dad8d1a0d222ad30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penaltyName: Fire Rate Down
-  description: Decrease fire rate to 1
-  fireRate: 1
+  penaltyName: Movement Speed Down
+  description: Decreases movement speed by 10%
+  currentRank: 0
+  maxRank: 5
 --- !u!114 &4218782252434281439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,8 +1310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penaltyName: Fire Rate Down
-  description: Decrease fire rate to 2
-  fireRate: 2
+  description: Decreases fire rate by 10%
+  currentRank: 0
+  maxRank: 5
 --- !u!114 &4218782252434281436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,6 +1327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penaltyName: Fire Rate Down
   description: Decrease fire rate to .5
+  currentRank: 0
+  maxRank: 5
   fireRate: 0.5
 --- !u!1 &4218782252460827351
 GameObject:
