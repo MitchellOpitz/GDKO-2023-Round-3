@@ -15185,6 +15185,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1630561038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1630561040}
+  - component: {fileID: 1630561039}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1630561039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630561038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595ce911f3ed58344bfb65825ec5a34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+--- !u!4 &1630561040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630561038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.470821, y: -14.670057, z: -3.7522862}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1723713039
 GameObject:
   m_ObjectHideFlags: 0
@@ -15244,6 +15288,7 @@ GameObject:
   - component: {fileID: 1764463730}
   - component: {fileID: 1764463729}
   - component: {fileID: 1764463727}
+  - component: {fileID: 1764463731}
   m_Layer: 0
   m_Name: PenaltyHolder
   m_TagString: Untagged
@@ -15300,6 +15345,7 @@ MonoBehaviour:
   - {fileID: 1764463730}
   - {fileID: 1764463729}
   - {fileID: 1764463727}
+  - {fileID: 1764463731}
 --- !u!114 &1764463727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15370,6 +15416,27 @@ MonoBehaviour:
   currentRank: 0
   maxRank: 1
   spawner: {fileID: 0}
+--- !u!114 &1764463731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764463723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267692898cca0924bb8b06c73f80b9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyName: Enemy Speed UP
+  description: Increases enemy movement speed by 10%
+  currentRank: 0
+  maxRank: 10
+  crawlers: {fileID: 0}
+  spiderlings: {fileID: 0}
+  hornets: {fileID: 0}
+  spiderBoss: {fileID: 0}
+  hornetBoss: {fileID: 0}
 --- !u!1 &2010941819
 GameObject:
   m_ObjectHideFlags: 0

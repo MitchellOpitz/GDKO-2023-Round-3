@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Spiderlings : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Spiderlings : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").transform;
+        int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
+        speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
+        Debug.Log("Spiderling speed = " + speed);
     }
 
     private void Update()

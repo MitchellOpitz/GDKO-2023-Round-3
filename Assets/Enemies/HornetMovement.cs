@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class HornetMovement : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class HornetMovement : MonoBehaviour
     private float time = 0f;
 
     private string passDirection;
+
+    private void Start()
+    {
+        int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
+        speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
+        Debug.Log("Speed = " + speed);
+    }
 
     public void Move(string dir)
     {

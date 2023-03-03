@@ -25,6 +25,10 @@ public class HornetAttacks : MonoBehaviour
         p2AttackNum = 1;
         waiting = false;
         player = GameObject.Find("Player").transform;
+
+        int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
+        speed *= (float)System.Math.Pow(1.1f, penaltyRank + 1);
+        Debug.Log("Speed = " + speed);
     }
 
     // Update is called once per frame

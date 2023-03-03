@@ -1,9 +1,17 @@
 using UnityEngine;
+using System;
 
 public class CrawlerMovement : MonoBehaviour
 {
     public float speed = 5f;
     Vector2 movement = Vector2.zero;
+
+    private void Start()
+    {
+        int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
+        speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
+        Debug.Log("Speed = " + speed);
+    }
 
     public void Move(string direction)
     {

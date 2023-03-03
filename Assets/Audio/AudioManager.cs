@@ -17,8 +17,6 @@ public class AudioManager : MonoBehaviour
 
     private int currentTrackIndex = 0;
 
-    private float fadeTime = 1f;
-
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();

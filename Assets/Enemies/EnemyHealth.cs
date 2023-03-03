@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,9 +10,16 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
 
     public Image healthBarImage;
+    private GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void Start()
     {
+        maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.1, gameManager.level));
         currentHealth = maxHealth;
     }
 
