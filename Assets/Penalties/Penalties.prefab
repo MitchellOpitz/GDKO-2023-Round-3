@@ -1176,6 +1176,7 @@ GameObject:
   - component: {fileID: -3707027912265381426}
   - component: {fileID: 4061794118375448322}
   - component: {fileID: 1252656751752168778}
+  - component: {fileID: 6682642829217427801}
   m_Layer: 5
   m_Name: Penalties
   m_TagString: Untagged
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   - {fileID: -3707027912265381426}
   - {fileID: 4061794118375448322}
   - {fileID: 1252656751752168778}
+  - {fileID: 6682642829217427801}
 --- !u!114 &4218782252434281438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,6 +1373,27 @@ MonoBehaviour:
   currentRank: 0
   maxRank: 1
   spawner: {fileID: 6324713882061262422, guid: ca027abf7b6392046831f0748cb107e7, type: 3}
+--- !u!114 &6682642829217427801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218782252434281414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267692898cca0924bb8b06c73f80b9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyName: Enemy Speed UP
+  description: Increases enemy movement speed by 10%
+  currentRank: 0
+  maxRank: 10
+  crawlers: {fileID: 4882892467470893993, guid: d7f91ddf86ea0684bbb45e2eb23245dd, type: 3}
+  spiderlings: {fileID: 4882892467470893993, guid: ef6e46d1af77a5f4384beab6f6dc0588, type: 3}
+  hornets: {fileID: 3871540755683200229, guid: 8447668866d2eda478564da02598fca3, type: 3}
+  spiderBoss: {fileID: 4882892467470893993, guid: 8578ec6f0aab90b4ca947033151e28f1, type: 3}
+  hornetBoss: {fileID: 3125783818928737718, guid: dfce42407ce31f041a87f9bbf6703105, type: 3}
 --- !u!1 &4218782252460827351
 GameObject:
   m_ObjectHideFlags: 0
