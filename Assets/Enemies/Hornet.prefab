@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   currentHealth: 0
+  points: 15
   healthBarImage: {fileID: 3871540756346369590}
 --- !u!114 &8142879041834758318
 MonoBehaviour:

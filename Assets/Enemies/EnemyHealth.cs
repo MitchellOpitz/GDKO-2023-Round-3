@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public int points;
 
     public Image healthBarImage;
     private GameManager gameManager;
@@ -46,9 +47,11 @@ public class EnemyHealth : MonoBehaviour
         // Do something when the enemy dies
         if (gameObject.GetComponent<Boss>())
         {
+            FindObjectOfType<GameManager>().level++;
             FindObjectOfType<AudioManager>().FadeOut(3f); // For test purposes.
             gameObject.GetComponent<Boss>().StartUpgrades();
         }
+        gameManager.AddScore(points);
         Destroy(gameObject);
     }
 }
