@@ -13,7 +13,14 @@ public class Damage : Upgrade
 
     public override void ActivateUpgrade()
     {
-        FindObjectOfType<PlayerShoot>().damage += 1;
+        int currentDamage = FindObjectOfType<PlayerShoot>().damage;
+        if (Mathf.Floor(currentDamage) == Mathf.Floor(currentDamage * 1.1f))
+        {
+            FindObjectOfType<PlayerShoot>().damage += 1;
+        } else
+        {
+            FindObjectOfType<PlayerShoot>().damage = (int)Mathf.Floor(currentDamage * 1.1f);
+        }
         GameObject.Find("UpgradeHolder").GetComponent<Damage>().currentRank++;
         Instantiate(penaltiesMenu);
         Destroy(FindObjectOfType<UpgradesShop>().gameObject);

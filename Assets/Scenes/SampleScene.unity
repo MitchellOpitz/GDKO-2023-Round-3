@@ -431,7 +431,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1721257063650758883, guid: a9cbac9fbde53994495c9b5b305e0116, type: 3}
   projectileSpeed: 10
   fireRate: 0.5
-  damage: 5
+  damage: 7
   upgradeRank: 0
   animator: {fileID: 249016240}
 --- !u!114 &249016246
