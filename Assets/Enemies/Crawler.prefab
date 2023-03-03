@@ -114,11 +114,9 @@ GameObject:
   - component: {fileID: 4882892467470893995}
   - component: {fileID: 4882892467470893994}
   - component: {fileID: 4882892467470893999}
-  - component: {fileID: -349282362806373162}
-  - component: {fileID: 1617631301}
-  - component: {fileID: 7674377124242888803}
+  - component: {fileID: 701454241125500221}
   m_Layer: 0
-  m_Name: Spiderlings
+  m_Name: Crawler
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3438905571476058607, guid: 5d4e0934ceb0aaf4087b1116e37eaf61, type: 3}
+  m_Sprite: {fileID: 1432497151351349326, guid: 57b46812ec21b064381e8d69222fbae3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -203,9 +201,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.029216886}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.32469976
 --- !u!50 &4882892467470893994
 Rigidbody2D:
   serializedVersion: 4
@@ -242,7 +240,7 @@ MonoBehaviour:
   maxHealth: 15
   currentHealth: 0
   healthBarImage: {fileID: 4882892467881490810}
---- !u!114 &-349282362806373162
+--- !u!114 &701454241125500221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,40 +249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4882892467470893993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ff8b169e5136849af15a9475a374b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 4882892467881490810}
-  firePoint: {fileID: 0}
---- !u!95 &1617631301
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4882892467470893993}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f40dcfd17386a14d860dc546a6b3243, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7674377124242888803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4882892467470893993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817686f820ca732419ade6185645566f, type: 3}
+  m_Script: {fileID: 11500000, guid: dcfcdb77e0521a84a99d9a4611a00073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
