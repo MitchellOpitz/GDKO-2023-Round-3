@@ -175,22 +175,25 @@ public class Boss1Attacks : MonoBehaviour
         }
         animator.SetFloat("Speed", 0f);
     }
-
     IEnumerator Fire(int numberOfShots)
     {
         yield return new WaitForSeconds(1f);
-        
+
         for (int i = 0; i < numberOfShots; i++)
         {
             // Calculate direction to player
             animator.SetBool("isShooting", true);
             StartCoroutine(AdjustParameterAfterFrames(12, "isShooting", false));
-            Vector3 shotDirection = (player.position - firePoint.position).normalized;
+            Vector3 playerDirection = player.position - transform.position;
+            float angle = Mathf.Atan2(playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
+
+            // Rotate firePoint to aim at player
+            firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
 
             // Instantiate bullet prefab and set its direction
-            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-            bullet.direction = shotDirection;
+            bullet.direction = playerDirection.normalized;
 
             yield return new WaitForSeconds(0.5f);
         }
