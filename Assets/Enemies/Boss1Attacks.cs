@@ -11,6 +11,7 @@ public class Boss1Attacks : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public GameObject minion;
+    public CameraMovement cam;
 
     private bool waiting;
     private Vector3 playerDirection;
@@ -26,6 +27,7 @@ public class Boss1Attacks : MonoBehaviour
         waiting = false;
         player = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
+        cam = FindObjectOfType<CameraMovement>();
 
         int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
         speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
@@ -150,7 +152,24 @@ public class Boss1Attacks : MonoBehaviour
         float timer = 0f;
         while (timer < moveDuration)
         {
-            transform.position += playerDirection * (speed * speedMultiplier) * Time.deltaTime;
+            if (transform.position.x < cam.cameraXMin + 2)
+            {
+                transform.position = new Vector3(transform.position.x + 0.01f, transform.position.y, 0f);
+            } else if (transform.position.x > cam.cameraXMax - 2)
+            {
+                transform.position = new Vector3(transform.position.x - 0.01f, transform.position.y, 0f);
+            }
+            else if (transform.position.y > cam.cameraYMax - 2)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - 0.01f, 0f);
+            }
+            else if (transform.position.y < cam.cameraYMin + 2)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.01f, 0f);
+            } else
+            {
+                transform.position += playerDirection * (speed * speedMultiplier) * Time.deltaTime;
+            }
             timer += Time.deltaTime;
             yield return null;
         }
