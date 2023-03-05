@@ -96,7 +96,7 @@ public class HornetAttacks : MonoBehaviour
 
             // Fire bullet
             GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
             bullet.direction = playerDirection;
         }
 
@@ -115,7 +115,7 @@ public class HornetAttacks : MonoBehaviour
             Vector3 shotDirection = Quaternion.Euler(0, -15 + i * 7.5f, 0) * (player.position - firePoint.position).normalized;
 
             GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
             bullet.direction = shotDirection;
         }
         StartCoroutine(WaitReset(1f));
@@ -188,7 +188,7 @@ public class HornetAttacks : MonoBehaviour
 
             // Instantiate bullet prefab and set its direction
             GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
             bullet.direction = shotDirection;
 
             yield return new WaitForSeconds(0.1f);
@@ -208,7 +208,7 @@ public class HornetAttacks : MonoBehaviour
 
             // Instantiate bullet prefab and set its direction
             GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
             bullet.direction = shotDirection;
 
             yield return new WaitForSeconds(0.5f);

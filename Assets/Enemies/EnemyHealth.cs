@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int points;
+    public Animation animation;
 
     public Image healthBarImage;
     private GameManager gameManager;

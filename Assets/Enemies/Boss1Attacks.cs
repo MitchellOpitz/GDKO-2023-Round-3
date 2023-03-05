@@ -170,7 +170,7 @@ public class Boss1Attacks : MonoBehaviour
 
             // Instantiate bullet prefab and set its direction
             GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
             bullet.direction = shotDirection;
 
             yield return new WaitForSeconds(0.5f);
