@@ -62,7 +62,7 @@ public class HornetAttacks : MonoBehaviour
     {
         // Choose a random position within attack radius
         Vector2 randomDirection = Random.insideUnitCircle.normalized;
-        Vector3 randomPosition = transform.position + new Vector3(randomDirection.x, 0f, randomDirection.y) * moveRadius;
+        Vector3 randomPosition = transform.position + new Vector3(randomDirection.x, randomDirection.y, 0) * moveRadius;
 
         // Move to the random position
         StartCoroutine(MoveToPosition(randomPosition));
