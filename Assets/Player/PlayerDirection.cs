@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerDirection : MonoBehaviour
 {
-    private bool facingRight = true; // Is the player facing right?
+    public bool facingRight = true; // Is the player facing right?
 
     void Update()
     {

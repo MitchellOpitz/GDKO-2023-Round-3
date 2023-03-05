@@ -9,14 +9,18 @@ public class PlayerShoot : MonoBehaviour
     public float fireRate = 0.5f;
     public int damage = 5;
     public int upgradeRank = 0;
+    public GameObject bang;
+    public float directionOffset;
 
     private Animator animator;
+    private PlayerDirection dir;
 
     private float nextFireTime = 0f;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        dir = GetComponent<PlayerDirection>();
     }
 
     void Update()
@@ -56,11 +60,20 @@ public class PlayerShoot : MonoBehaviour
             float spreadAngle = -10f + (10f * i);
             Quaternion spreadRotation = Quaternion.Euler(0, 0, gunTip.rotation.eulerAngles.z + spreadAngle);
             GameObject projectile = Instantiate(projectilePrefab, startPosition, spreadRotation);
+            if (dir.facingRight)
+            {
+                Instantiate(bang, startPosition, Quaternion.Euler(0, 0, 0));
+            } else
+            {
+                Vector3 newPosition = startPosition;
+                newPosition.x -= directionOffset;
+                Instantiate(bang, newPosition, Quaternion.Euler(0, 180f, 0));
+            }
             projectile.GetComponent<Bullet>().damage = damageAmount;
             projectile.transform.position = new Vector3(projectile.transform.position.x, projectile.transform.position.y, 0f);
 
             Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
             projectileRigidbody.velocity = projectile.transform.right * projectileSpeed;
-        }        
+        }
     }
 }
