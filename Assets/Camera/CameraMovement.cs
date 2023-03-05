@@ -16,15 +16,13 @@ public class CameraMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     private float halfScreenWidth;
-    private float halfScreenHeight;
 
     private void Start()
     {
         halfScreenWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
-        halfScreenHeight = Camera.main.orthographicSize;
     }
 
-    private void LateUpdate()
+    public void LateUpdate()
     {
         // Calculate the target position with clamping
         float targetX = Mathf.Clamp(target.position.x, cameraXMin + halfScreenWidth, cameraXMax - halfScreenWidth);
@@ -33,12 +31,5 @@ public class CameraMovement : MonoBehaviour
 
         // Smoothly move the camera to the target position
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothSpeed);
-    }
-
-    private Vector3 ClampCamera(Vector3 position)
-    {
-        float clampedX = Mathf.Clamp(position.x, cameraXMin + halfScreenWidth, cameraXMax - halfScreenWidth);
-        float clampedY = Mathf.Clamp(position.y, cameraYMin + halfScreenHeight, cameraYMax - halfScreenHeight);
-        return new Vector3(clampedX, clampedY, position.z);
     }
 }
