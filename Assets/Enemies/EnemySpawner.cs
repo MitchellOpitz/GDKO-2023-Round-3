@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject boss;
+    public GameObject[] bosses;
 
     private bool spawnStarted = false;
+    private int bossNumber = 0;
 
     private void Update()
     {
@@ -20,7 +21,13 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnBoss()
     {
         yield return new WaitForSeconds(3f);
-        Instantiate(boss);
+        Instantiate(bosses[bossNumber]);
         spawnStarted = false;
+        bossNumber++;
+
+        if (bossNumber == bosses.Length)
+        {
+            bossNumber = 0;
+        }
     }
 }
