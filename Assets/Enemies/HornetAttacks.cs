@@ -8,6 +8,7 @@ public class HornetAttacks : MonoBehaviour
     public float pauseTime;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public CameraMovement cam;
 
     public float moveRadius = 10f;
     public float numAttacks = 3;
@@ -25,6 +26,7 @@ public class HornetAttacks : MonoBehaviour
         p2AttackNum = 1;
         waiting = false;
         player = GameObject.Find("Player").transform;
+        cam = FindObjectOfType<CameraMovement>();
 
         int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
         speed *= (float)System.Math.Pow(1.1f, penaltyRank + 1);
@@ -64,8 +66,17 @@ public class HornetAttacks : MonoBehaviour
         Vector2 randomDirection = Random.insideUnitCircle.normalized;
         Vector3 randomPosition = transform.position + new Vector3(randomDirection.x, randomDirection.y, 0) * moveRadius;
 
-        // Move to the random position
-        StartCoroutine(MoveToPosition(randomPosition));
+        if (randomPosition.x < cam.cameraXMin + 2 ||
+            randomPosition.x > cam.cameraXMax - 2 ||
+            randomPosition.y > cam.cameraYMax - 2 ||
+            randomPosition.y < cam.cameraYMin + 2)
+        {
+            Phase1Attack();
+        } else
+        {
+            // Move to the random position
+            StartCoroutine(MoveToPosition(randomPosition));
+        }
     }
 
     private IEnumerator MoveToPosition(Vector3 targetPosition)
