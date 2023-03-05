@@ -11,6 +11,7 @@ public class PlayerShoot : MonoBehaviour
     public int upgradeRank = 0;
     public GameObject bang;
     public float directionOffset;
+    public float offset;
 
     private Animator animator;
     private PlayerDirection dir;
@@ -32,11 +33,12 @@ public class PlayerShoot : MonoBehaviour
             StartCoroutine(AdjustParameterAfterFrames(12, "isShooting", false));
         }
 
-        // Aim the gun towards the mouse cursor
+        // Aim the gun towards the mouse cursor with an offset angle of 90 degrees
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        gunTip.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        gunTip.rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
+
     }
 
     IEnumerator AdjustParameterAfterFrames(int framesToWait, string parameterName, bool value)

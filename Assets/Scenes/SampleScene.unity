@@ -438,6 +438,7 @@ MonoBehaviour:
   upgradeRank: 0
   bang: {fileID: 4496929310933689775, guid: 73531201148cf7c42954bca61c742c45, type: 3}
   directionOffset: 0
+  offset: 10
 --- !u!114 &249016246
 MonoBehaviour:
   m_ObjectHideFlags: 0
