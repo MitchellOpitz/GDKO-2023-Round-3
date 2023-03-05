@@ -79,6 +79,7 @@ public class PenaltiesShop : MonoBehaviour
 
     public void PurchasePenalty(int upgradeNumber)
     {
+        Time.timeScale = 1;
         switch (upgradeNumber)
         {
             case 1:

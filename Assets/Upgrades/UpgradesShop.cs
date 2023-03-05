@@ -18,6 +18,7 @@ public class UpgradesShop : MonoBehaviour
 
     void OnEnable()
     {
+        Time.timeScale = 0;
         GetUpgrades();
     }
 
