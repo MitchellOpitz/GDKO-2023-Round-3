@@ -34,6 +34,7 @@ public class PlayerShoot : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         gunTip.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
     IEnumerator AdjustParameterAfterFrames(int framesToWait, string parameterName, bool value)
     {
         for (int i = 0; i < framesToWait; i++)
@@ -63,18 +64,3 @@ public class PlayerShoot : MonoBehaviour
         }        
     }
 }
-
-/*
-
-    void Fire(int damageAmount)
-    {
-        nextFireTime = Time.time + fireRate;
-        GameObject projectile = Instantiate(projectilePrefab, gunTip.position, Quaternion.Euler(0, 0, gunTip.rotation.eulerAngles.z));
-        projectile.GetComponent<Bullet>().damage = damageAmount;
-        projectile.transform.position = new Vector3(projectile.transform.position.x, projectile.transform.position.y, 0f);
-
-        // Set the velocity of the projectile based on the gun tip's right vector
-        Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
-        projectileRigidbody.velocity = gunTip.right * projectileSpeed;
-    }
-*/

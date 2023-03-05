@@ -17,6 +17,7 @@ public class Boss1Attacks : MonoBehaviour
     private Transform player;
     private int p2AttackNumber;
     private int p3AttackNumber;
+    private Animator animator;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Boss1Attacks : MonoBehaviour
         p3AttackNumber = 1;
         waiting = false;
         player = GameObject.Find("Player").transform;
+        animator = GetComponent<Animator>();
 
         int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
         speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
@@ -144,6 +146,7 @@ public class Boss1Attacks : MonoBehaviour
     IEnumerator MoveTowardsPlayer(float speedMultiplier)
     {
         // Move towards player for moveDuration
+        animator.SetFloat("Speed", speed);
         float timer = 0f;
         while (timer < moveDuration)
         {
@@ -151,6 +154,7 @@ public class Boss1Attacks : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+        animator.SetFloat("Speed", 0f);
     }
 
     IEnumerator Fire(int numberOfShots)
@@ -160,6 +164,8 @@ public class Boss1Attacks : MonoBehaviour
         for (int i = 0; i < numberOfShots; i++)
         {
             // Calculate direction to player
+            animator.SetBool("isShooting", true);
+            StartCoroutine(AdjustParameterAfterFrames(12, "isShooting", false));
             Vector3 shotDirection = (player.position - firePoint.position).normalized;
 
             // Instantiate bullet prefab and set its direction
@@ -177,5 +183,15 @@ public class Boss1Attacks : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToWait);
         waiting = false;
+    }
+
+    IEnumerator AdjustParameterAfterFrames(int framesToWait, string parameterName, bool value)
+    {
+        for (int i = 0; i < framesToWait; i++)
+        {
+            yield return null;
+        }
+
+        animator.SetBool(parameterName, value);
     }
 }
