@@ -10,6 +10,8 @@ public class SpiderSpawner : MonoBehaviour
     public bool isHornet = false;
 
     private CameraMovement cameraMovement;
+    private IEnumerator spawner;
+    private float currentLevel;
 
     private string[] directions = { "top", "bottom", "left", "right" };
 
@@ -17,6 +19,16 @@ public class SpiderSpawner : MonoBehaviour
     {
         cameraMovement = FindObjectOfType<CameraMovement>();
         StartCoroutine(SpawnMinions());
+        currentLevel = FindObjectOfType<GameManager>().level;
+    }
+
+    private void Update()
+    {
+        if (currentLevel != FindObjectOfType<GameManager>().level)
+        {
+            currentLevel = FindObjectOfType<GameManager>().level;
+            spawnInterval = spawnInterval * (1 - (0.01f * currentLevel));
+        }
     }
 
     IEnumerator SpawnMinions()
