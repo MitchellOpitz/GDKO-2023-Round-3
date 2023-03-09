@@ -65,10 +65,11 @@ public class PlayerShoot : MonoBehaviour
             if (dir.facingRight)
             {
                 Instantiate(bang, startPosition, Quaternion.Euler(0, 0, 0));
-            } else
+            }
+            else
             {
                 Vector3 newPosition = startPosition;
-                newPosition.x -= directionOffset;
+                newPosition.x += directionOffset;
                 Instantiate(bang, newPosition, Quaternion.Euler(0, 180f, 0));
             }
             projectile.GetComponent<Bullet>().damage = damageAmount;

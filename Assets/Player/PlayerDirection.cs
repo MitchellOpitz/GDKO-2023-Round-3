@@ -6,16 +6,19 @@ public class PlayerDirection : MonoBehaviour
 
     void Update()
     {
-        // Get input value for horizontal movement
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        // Get the position of the mouse in world coordinates
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Flip the player sprite if the input direction changes
-        if (moveHorizontal > 0 && !facingRight)
+        // Flip the sprite horizontally based on the position of the mouse
+        if (mousePos.x > transform.position.x && !facingRight)
         {
+            Debug.Log("Switched to right");
             Flip();
         }
-        else if (moveHorizontal < 0 && facingRight)
+        
+        if (mousePos.x < transform.position.x && facingRight)
         {
+            Debug.Log("Switched to left");
             Flip();
         }
     }
