@@ -322,6 +322,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1721257063650758883, guid: d473f6e4eff4f57409551da1d8521e57, type: 3}
   firePoint: {fileID: 7110407865062269740}
   minion: {fileID: 4882892467470893993, guid: ef6e46d1af77a5f4384beab6f6dc0588, type: 3}
+  cam: {fileID: 0}
+  offsetAngle: 25
 --- !u!95 &1617631301
 Animator:
   serializedVersion: 3

@@ -12,6 +12,7 @@ public class Boss1Attacks : MonoBehaviour
     public Transform firePoint;
     public GameObject minion;
     public CameraMovement cam;
+    public float offsetAngle;
 
     private bool waiting;
     private Vector3 playerDirection;
@@ -35,7 +36,13 @@ public class Boss1Attacks : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        Vector3 playerDirection = player.position - transform.position;
+        float angle = Mathf.Atan2(playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
+
+        // Rotate firePoint to aim at player
+        firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
+
         switch (GetComponent<Phases>().PhaseCheck())
         {
             case 1:
@@ -186,6 +193,13 @@ public class Boss1Attacks : MonoBehaviour
             StartCoroutine(AdjustParameterAfterFrames(12, "isShooting", false));
             Vector3 playerDirection = player.position - transform.position;
             float angle = Mathf.Atan2(playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
+            if(transform.rotation.y == 0)
+            {
+                angle += (offsetAngle * (angle / 90));
+            } else
+            {
+                angle -= (offsetAngle * (angle / -90));
+            }
 
             // Rotate firePoint to aim at player
             firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
