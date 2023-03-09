@@ -53,9 +53,8 @@ public class EnemyBullets : MonoBehaviour
         // check if the object is an enemy with the Dummy script attached
         if (collision.tag == "Player")
         {
-            //GameObject player = collision.GetComponent<PlayerHealth>();
-            //enemy.TakeDamage(damage);
-            Debug.Log("Player takes damage.");
+            PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+            player.TakeDamage(damage);
             Destroy(gameObject);
         }
     }
