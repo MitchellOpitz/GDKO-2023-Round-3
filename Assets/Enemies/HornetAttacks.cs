@@ -19,6 +19,7 @@ public class HornetAttacks : MonoBehaviour
     private int p1AttackNum;
     private int p2AttackNum;
     private int p3AttackNumber;
+    private AudioManager audioManager;
 
     private void Start()
     {
@@ -27,6 +28,8 @@ public class HornetAttacks : MonoBehaviour
         waiting = false;
         player = GameObject.Find("Player").transform;
         cam = FindObjectOfType<CameraMovement>();
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.ChangeTrack(2, 1f);
 
         int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
         speed *= (float)System.Math.Pow(1.1f, penaltyRank + 1);

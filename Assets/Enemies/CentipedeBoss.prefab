@@ -121,6 +121,7 @@ MonoBehaviour:
   points: 100
   animation: {fileID: 0}
   healthBarImage: {fileID: 3740115286482589798}
+  healthBar: {fileID: 3740115285112304550}
 --- !u!114 &3740115284861887601
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,8 +31,8 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = tracks[currentTrackIndex].clip;
         audioSource.loop = tracks[currentTrackIndex].loop;
-        audioSource.volume = tracks[currentTrackIndex].volume;
         audioSource.Play();
+        FadeIn(1f);
     }
 
     public void FadeOut(float time)
@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / time;
+            audioSource.volume -= startVolume * Time.unscaledDeltaTime / time;
 
             yield return null;
         }
@@ -54,8 +54,7 @@ public class AudioManager : MonoBehaviour
         audioSource.Stop();
         audioSource.volume = startVolume;
     }
-
-    public void ChangeTrack(int index)
+    public void ChangeTrack(int index, float fadeTime)
     {
         if (index < 0 || index >= tracks.Count)
         {
@@ -63,7 +62,51 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        if (currentTrackIndex == index)
+        {
+            return;
+        }
+
+        StartCoroutine(ChangeTrackCoroutine(index, fadeTime));
+    }
+
+    private IEnumerator ChangeTrackCoroutine(int index, float fadeTime)
+    {
+        if (fadeTime > 0f)
+        {
+            // Fade out the current track
+            StartCoroutine(FadeOutCoroutine(fadeTime));
+            yield return new WaitForSeconds(fadeTime);
+        }
+
+        // Stop the current track and play the new one
+        audioSource.Stop();
+        audioSource.ignoreListenerPause = true;
         currentTrackIndex = index;
         PlayCurrentTrack();
+
+        if (fadeTime > 0f)
+        {
+            // Fade in the new track
+            StartCoroutine(FadeInCoroutine(fadeTime));
+        }
+    }
+
+
+
+    public void FadeIn(float time)
+    {
+        StartCoroutine(FadeInCoroutine(time));
+    }
+
+    private IEnumerator FadeInCoroutine(float time)
+    {
+
+        while (audioSource.volume < 1)
+        {
+            audioSource.volume += 1 * Time.unscaledDeltaTime / time;
+
+            yield return null;
+        }
     }
 }

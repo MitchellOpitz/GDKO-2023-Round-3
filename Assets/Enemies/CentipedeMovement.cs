@@ -16,12 +16,15 @@ public class CentipedeMovement : MonoBehaviour
     private float nextYPos = 0f; // the next y position to move to
     private float yPos = 0f; // the current y position
     public bool flipped;
+    private AudioManager audioManager;
 
     private void Start()
     {
         enemyHealth = GetComponent<EnemyHealth>();
         baseSpeed = speed;
         flipped = false;
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.ChangeTrack(3, 1f);
     }
 
     void Update()

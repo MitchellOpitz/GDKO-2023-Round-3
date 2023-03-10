@@ -20,6 +20,7 @@ public class Boss1Attacks : MonoBehaviour
     private int p2AttackNumber;
     private int p3AttackNumber;
     private Animator animator;
+    private AudioManager audioManager;
 
     private void Start()
     {
@@ -29,9 +30,12 @@ public class Boss1Attacks : MonoBehaviour
         player = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
         cam = FindObjectOfType<CameraMovement>();
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.ChangeTrack(1, 1f);
 
         int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
         speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
+
     }
 
     // Update is called once per frame

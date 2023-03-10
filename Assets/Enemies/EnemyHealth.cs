@@ -12,7 +12,9 @@ public class EnemyHealth : MonoBehaviour
     public Animation animation;
 
     public Image healthBarImage;
+    public GameObject healthBar;
     private GameManager gameManager;
+    private AudioManager audioManager;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     {
         maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.1, gameManager.level));
         currentHealth = maxHealth;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void TakeDamage(int damage)
@@ -48,11 +51,24 @@ public class EnemyHealth : MonoBehaviour
         // Do something when the enemy dies
         if (gameObject.GetComponent<Boss>())
         {
+            healthBar.SetActive(false);
+            GetComponent<SpriteRenderer>().enabled = false;
             FindObjectOfType<GameManager>().level++;
-            FindObjectOfType<AudioManager>().FadeOut(3f); // For test purposes.
-            gameObject.GetComponent<Boss>().StartUpgrades();
+            audioManager = FindObjectOfType<AudioManager>();
+            audioManager.ChangeTrack(0, 1f);
+            StartCoroutine(StartUpgradePanel());
+            gameManager.AddScore(points);
+        } else
+        {
+            gameManager.AddScore(points);
+            Destroy(gameObject);
         }
-        gameManager.AddScore(points);
+    }
+
+    IEnumerator StartUpgradePanel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        gameObject.GetComponent<Boss>().StartUpgrades();
         Destroy(gameObject);
     }
 }

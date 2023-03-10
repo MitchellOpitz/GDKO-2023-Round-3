@@ -440,6 +440,7 @@ MonoBehaviour:
   points: 100
   animation: {fileID: 0}
   healthBarImage: {fileID: 3125783817528338076}
+  healthBar: {fileID: 3125783818754657319}
 --- !u!114 &3125783818928737714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,5 +504,6 @@ MonoBehaviour:
   pauseTime: 0.5
   bulletPrefab: {fileID: 1721257063650758883, guid: d473f6e4eff4f57409551da1d8521e57, type: 3}
   firePoint: {fileID: 3125783818834275712}
+  cam: {fileID: 0}
   moveRadius: 10
   numAttacks: 3
