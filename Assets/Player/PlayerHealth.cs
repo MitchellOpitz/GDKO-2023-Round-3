@@ -30,10 +30,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider);
         if (collider.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy touched.");
             currentHealth--;
         }
     }
