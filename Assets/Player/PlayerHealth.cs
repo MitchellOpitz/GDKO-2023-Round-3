@@ -28,10 +28,10 @@ public class PlayerHealth : MonoBehaviour
         healthBar.UpdateHealth(currentHealth);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collision);
-        if (collision.gameObject.CompareTag("Enemy"))
+        Debug.Log(collider);
+        if (collider.CompareTag("Enemy"))
         {
             Debug.Log("Enemy touched.");
             currentHealth--;
