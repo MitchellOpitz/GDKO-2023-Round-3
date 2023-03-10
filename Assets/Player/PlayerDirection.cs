@@ -12,13 +12,11 @@ public class PlayerDirection : MonoBehaviour
         // Flip the sprite horizontally based on the position of the mouse
         if (mousePos.x > transform.position.x && !facingRight)
         {
-            Debug.Log("Switched to right");
             Flip();
         }
         
         if (mousePos.x < transform.position.x && facingRight)
         {
-            Debug.Log("Switched to left");
             Flip();
         }
     }
