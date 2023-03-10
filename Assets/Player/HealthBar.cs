@@ -60,6 +60,10 @@ public class HealthBar : MonoBehaviour
             UpdateBlocks();
         }
         currentHealth = health;
+        if (currentHealth == 0)
+        {
+            Destroy(GameObject.Find("Player"));
+        }
     }
 
     private void UpdateBlocks()

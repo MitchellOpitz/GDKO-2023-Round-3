@@ -41,23 +41,26 @@ public class Boss1Attacks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 playerDirection = player.position - transform.position;
-        float angle = Mathf.Atan2(playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
-
-        // Rotate firePoint to aim at player
-        firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
-
-        switch (GetComponent<Phases>().PhaseCheck())
+        if (player)
         {
-            case 1:
-                Phase1Attack();
-                break;
-            case 2:
-                Phase2();
-                break;
-            case 3:
-                Phase3();
-                break;
+            Vector3 playerDirection = player.position - transform.position;
+            float angle = Mathf.Atan2(playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
+
+            // Rotate firePoint to aim at player
+            firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
+
+            switch (GetComponent<Phases>().PhaseCheck())
+            {
+                case 1:
+                    Phase1Attack();
+                    break;
+                case 2:
+                    Phase2();
+                    break;
+                case 3:
+                    Phase3();
+                    break;
+            }
         }
     }
 

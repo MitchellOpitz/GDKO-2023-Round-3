@@ -24,12 +24,15 @@ public class CameraMovement : MonoBehaviour
 
     public void LateUpdate()
     {
-        // Calculate the target position with clamping
-        float targetX = Mathf.Clamp(target.position.x, cameraXMin + halfScreenWidth, cameraXMax - halfScreenWidth);
-        float targetY = Mathf.Clamp(target.position.y, cameraYMin + Camera.main.orthographicSize, cameraYMax - Camera.main.orthographicSize);
-        Vector3 targetPosition = new Vector3(targetX, targetY, -10);
+        if (target)
+        {
+            // Calculate the target position with clamping
+            float targetX = Mathf.Clamp(target.position.x, cameraXMin + halfScreenWidth, cameraXMax - halfScreenWidth);
+            float targetY = Mathf.Clamp(target.position.y, cameraYMin + Camera.main.orthographicSize, cameraYMax - Camera.main.orthographicSize);
+            Vector3 targetPosition = new Vector3(targetX, targetY, -10);
 
-        // Smoothly move the camera to the target position
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothSpeed);
+            // Smoothly move the camera to the target position
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothSpeed);
+        }
     }
 }

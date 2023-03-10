@@ -10,7 +10,10 @@ public class FacePlayer : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform;
+        if (GameObject.Find("Player"))
+        {
+            player = GameObject.Find("Player").transform;
+        }
     }
 
     void Update()

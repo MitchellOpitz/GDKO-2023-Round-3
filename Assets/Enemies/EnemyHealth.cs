@@ -53,9 +53,10 @@ public class EnemyHealth : MonoBehaviour
         {
             healthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
             FindObjectOfType<GameManager>().level++;
             audioManager = FindObjectOfType<AudioManager>();
-            audioManager.ChangeTrack(0, 1f);
+            audioManager.ChangeTrack(0, .75f);
             StartCoroutine(StartUpgradePanel());
             gameManager.AddScore(points);
         } else

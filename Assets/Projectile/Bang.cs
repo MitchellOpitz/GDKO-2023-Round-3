@@ -12,22 +12,29 @@ public class Bang : MonoBehaviour
 
     private void Start()
     {
-        firePoint = GameObject.Find("GunTip").GetComponent<Transform>();
-        dir = GameObject.Find("Player").GetComponent<PlayerDirection>();
-        StartCoroutine(DeleteAfterFrames(12, gameObject));
+        if (GameObject.Find("Player"))
+        {
+            firePoint = GameObject.Find("GunTip").GetComponent<Transform>();
+            dir = GameObject.Find("Player").GetComponent<PlayerDirection>();
+            StartCoroutine(DeleteAfterFrames(12, gameObject));
+        }
     }
 
     private void Update()
     {
-        
-        if (!dir.facingRight)
+
+        if (GameObject.Find("Player"))
         {
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
-            transform.position = new Vector3(firePoint.position.x + leftOffset, firePoint.position.y, 0f);
-        } else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            transform.position = new Vector3(firePoint.position.x + rightOffset, firePoint.position.y, 0f);
+            if (!dir.facingRight)
+            {
+                transform.rotation = Quaternion.Euler(0, 180f, 0);
+                transform.position = new Vector3(firePoint.position.x + leftOffset, firePoint.position.y, 0f);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                transform.position = new Vector3(firePoint.position.x + rightOffset, firePoint.position.y, 0f);
+            }
         }
     }
 

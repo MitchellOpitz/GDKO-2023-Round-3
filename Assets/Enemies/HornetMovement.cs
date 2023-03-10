@@ -13,8 +13,11 @@ public class HornetMovement : MonoBehaviour
 
     private void Start()
     {
-        int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
-        speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
+        if (GameObject.Find("PenaltyHolder"))
+        {
+            int penaltyRank = GameObject.Find("PenaltyHolder").GetComponent<EnemySpeedUp>().currentRank;
+            speed *= (float)Math.Pow(1.1f, penaltyRank + 1);
+        }
     }
 
     public void Move(string dir)

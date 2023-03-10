@@ -38,17 +38,20 @@ public class HornetAttacks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (GetComponent<Phases>().PhaseCheck())
+        if (player)
         {
-            case 1:
-                Phase1();
-                break;
-            case 2:
-                Phase2();
-                break;
-            case 3:
-                Phase3();
-                break;
+            switch (GetComponent<Phases>().PhaseCheck())
+            {
+                case 1:
+                    Phase1();
+                    break;
+                case 2:
+                    Phase2();
+                    break;
+                case 3:
+                    Phase3();
+                    break;
+            }
         }
     }
 
@@ -99,26 +102,29 @@ public class HornetAttacks : MonoBehaviour
     }
     IEnumerator FireAtPlayer(int shotsToFire)
     {
-        for (int shotsFired = 0; shotsFired < shotsToFire; shotsFired++)
+        if (player)
         {
-            yield return new WaitForSeconds(pauseTime);
+            for (int shotsFired = 0; shotsFired < shotsToFire; shotsFired++)
+            {
+                yield return new WaitForSeconds(pauseTime);
 
-            // Aim at player
-            Vector3 playerDirection = (player.position - firePoint.position).normalized;
-            float angle = Mathf.Atan2(playerDirection.x, playerDirection.z) * Mathf.Rad2Deg;
-            firePoint.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
+                // Aim at player
+                Vector3 playerDirection = (player.position - firePoint.position).normalized;
+                float angle = Mathf.Atan2(playerDirection.x, playerDirection.z) * Mathf.Rad2Deg;
+                firePoint.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
 
-            // Fire bullet
-            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-            bullet.direction = playerDirection;
-        }
+                // Fire bullet
+                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                bullet.direction = playerDirection;
+            }
 
-        yield return new WaitForSeconds(.5f);
-        if(p1AttackNum < 3)
-        {
-            Phase1Attack();
-            p1AttackNum++;
+            yield return new WaitForSeconds(.5f);
+            if (p1AttackNum < 3)
+            {
+                Phase1Attack();
+                p1AttackNum++;
+            }
         }
     }
     public IEnumerator Phase2Attack()
@@ -195,17 +201,20 @@ public class HornetAttacks : MonoBehaviour
         waiting = true;
         for (int i = 0; i < 30; i++)
         {
-            // Calculate direction to player with sine wave
-            Vector3 shotDirection = (player.position - firePoint.position).normalized;
-            float sineOffset = Mathf.Sin((float)i / 10f * Mathf.PI) * 30f;
-            shotDirection = Quaternion.Euler(0f, sineOffset, 0f) * shotDirection;
+            if (player)
+            {
+                // Calculate direction to player with sine wave
+                Vector3 shotDirection = (player.position - firePoint.position).normalized;
+                float sineOffset = Mathf.Sin((float)i / 10f * Mathf.PI) * 30f;
+                shotDirection = Quaternion.Euler(0f, sineOffset, 0f) * shotDirection;
 
-            // Instantiate bullet prefab and set its direction
-            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-            bullet.direction = shotDirection;
+                // Instantiate bullet prefab and set its direction
+                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                bullet.direction = shotDirection;
 
-            yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f);
+            }
         }
         yield return new WaitForSeconds(1f);
         waiting = false;
