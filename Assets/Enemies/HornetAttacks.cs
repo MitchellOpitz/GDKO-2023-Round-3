@@ -9,6 +9,7 @@ public class HornetAttacks : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public CameraMovement cam;
+    public bool isDead;
 
     public float moveRadius = 10f;
     public float numAttacks = 3;
@@ -23,6 +24,7 @@ public class HornetAttacks : MonoBehaviour
 
     private void Start()
     {
+        isDead = false;
         p3AttackNumber = 1;
         p2AttackNum = 1;
         waiting = false;
@@ -114,9 +116,12 @@ public class HornetAttacks : MonoBehaviour
                 firePoint.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
 
                 // Fire bullet
-                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-                bullet.direction = playerDirection;
+                if (!isDead)
+                {
+                    GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                    EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                    bullet.direction = playerDirection;
+                }
             }
 
             yield return new WaitForSeconds(.5f);
@@ -134,9 +139,12 @@ public class HornetAttacks : MonoBehaviour
         {
             Vector3 shotDirection = Quaternion.Euler(0, -15 + i * 7.5f, 0) * (player.position - firePoint.position).normalized;
 
-            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-            bullet.direction = shotDirection;
+            if (!isDead)
+            {
+                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                bullet.direction = shotDirection;
+            }
         }
         StartCoroutine(WaitReset(1f));
         yield return new WaitForSeconds(1f);
@@ -209,9 +217,12 @@ public class HornetAttacks : MonoBehaviour
                 shotDirection = Quaternion.Euler(0f, sineOffset, 0f) * shotDirection;
 
                 // Instantiate bullet prefab and set its direction
-                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-                bullet.direction = shotDirection;
+                if (!isDead)
+                {
+                    GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                    EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                    bullet.direction = shotDirection;
+                }
 
                 yield return new WaitForSeconds(0.1f);
             }
@@ -230,9 +241,12 @@ public class HornetAttacks : MonoBehaviour
             Vector3 shotDirection = (player.position - firePoint.position).normalized;
 
             // Instantiate bullet prefab and set its direction
-            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-            bullet.direction = shotDirection;
+            if (!isDead)
+            {
+                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                bullet.direction = shotDirection;
+            }
 
             yield return new WaitForSeconds(0.5f);
         }

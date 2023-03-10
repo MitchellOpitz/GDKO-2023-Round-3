@@ -13,6 +13,7 @@ public class Boss1Attacks : MonoBehaviour
     public GameObject minion;
     public CameraMovement cam;
     public float offsetAngle;
+    public bool isDead;
 
     private bool waiting;
     private Vector3 playerDirection;
@@ -24,6 +25,7 @@ public class Boss1Attacks : MonoBehaviour
 
     private void Start()
     {
+        isDead = false;
         p2AttackNumber = 1;
         p3AttackNumber = 1;
         waiting = false;
@@ -148,7 +150,10 @@ public class Boss1Attacks : MonoBehaviour
 
         for (int i = 0; i < numberOfMinions; i++)
         {
-            Instantiate(minion, firePoint.position, Quaternion.identity);
+            if (!isDead)
+            {
+                Instantiate(minion, firePoint.position, Quaternion.identity);
+            }
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -212,9 +217,12 @@ public class Boss1Attacks : MonoBehaviour
             firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
 
             // Instantiate bullet prefab and set its direction
-            GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
-            bullet.direction = playerDirection.normalized;
+            if (!isDead)
+            {
+                GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                EnemyBullets bullet = bulletObject.GetComponent<EnemyBullets>();
+                bullet.direction = playerDirection.normalized;
+            }
 
             yield return new WaitForSeconds(0.5f);
         }

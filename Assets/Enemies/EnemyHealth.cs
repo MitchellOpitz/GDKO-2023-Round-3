@@ -51,6 +51,7 @@ public class EnemyHealth : MonoBehaviour
         // Do something when the enemy dies
         if (gameObject.GetComponent<Boss>())
         {
+            SetDead();
             healthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
@@ -71,5 +72,23 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         gameObject.GetComponent<Boss>().StartUpgrades();
         Destroy(gameObject);
+    }
+
+    private void SetDead()
+    {
+        if (gameObject.GetComponent<Boss1Attacks>())
+        {
+            gameObject.GetComponent<Boss1Attacks>().isDead = true;
+        }
+
+        if (gameObject.GetComponent<CentipedeShooting>())
+        {
+            gameObject.GetComponent<CentipedeShooting>().isDead = true;
+        }
+
+        if (gameObject.GetComponent<HornetAttacks>())
+        {
+            gameObject.GetComponent<HornetAttacks>().isDead = true;
+        }
     }
 }

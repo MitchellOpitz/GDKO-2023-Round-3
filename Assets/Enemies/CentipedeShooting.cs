@@ -6,6 +6,7 @@ public class CentipedeShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public float shootAngle = 35f;
     public float bulletSpeed = 20f;
+    public bool isDead;
 
     private float fireRate = 2f;
     private float fireTimer = 0f;
@@ -15,6 +16,7 @@ public class CentipedeShooting : MonoBehaviour
 
     private void Start()
     {
+        isDead = false;
         movement = GetComponent<CentipedeMovement>();
         phase = GetComponent<Phases>();
     }
@@ -41,21 +43,24 @@ public class CentipedeShooting : MonoBehaviour
             Quaternion left2Rotation = Quaternion.Euler(0f, 0f, shootAngle/2);
             Quaternion right2Rotation = Quaternion.Euler(0f, 0f, -shootAngle/2);
 
-            // Spawn the left bullet
-            GameObject leftBullet = Instantiate(bulletPrefab, firePoint.position, leftRotation);
-            leftBullet.GetComponent<Rigidbody2D>().velocity = leftRotation * firePoint.right * bulletSpeed;
+            if (!isDead)
+            {
+                // Spawn the left bullet
+                GameObject leftBullet = Instantiate(bulletPrefab, firePoint.position, leftRotation);
+                leftBullet.GetComponent<Rigidbody2D>().velocity = leftRotation * firePoint.right * bulletSpeed;
 
-            // Spawn the right bullet
-            GameObject rightBullet = Instantiate(bulletPrefab, firePoint.position, rightRotation);
-            rightBullet.GetComponent<Rigidbody2D>().velocity = rightRotation * firePoint.right * bulletSpeed;
+                // Spawn the right bullet
+                GameObject rightBullet = Instantiate(bulletPrefab, firePoint.position, rightRotation);
+                rightBullet.GetComponent<Rigidbody2D>().velocity = rightRotation * firePoint.right * bulletSpeed;
 
-            // Spawn the left bullet
-            GameObject left2Bullet = Instantiate(bulletPrefab, firePoint.position, left2Rotation);
-            left2Bullet.GetComponent<Rigidbody2D>().velocity = left2Rotation * firePoint.right * bulletSpeed;
+                // Spawn the left bullet
+                GameObject left2Bullet = Instantiate(bulletPrefab, firePoint.position, left2Rotation);
+                left2Bullet.GetComponent<Rigidbody2D>().velocity = left2Rotation * firePoint.right * bulletSpeed;
 
-            // Spawn the right bullet
-            GameObject right2Bullet = Instantiate(bulletPrefab, firePoint.position, right2Rotation);
-            right2Bullet.GetComponent<Rigidbody2D>().velocity = right2Rotation * firePoint.right * bulletSpeed;
+                // Spawn the right bullet
+                GameObject right2Bullet = Instantiate(bulletPrefab, firePoint.position, right2Rotation);
+                right2Bullet.GetComponent<Rigidbody2D>().velocity = right2Rotation * firePoint.right * bulletSpeed;
+            }
         } else
         {
             Quaternion leftRotation = Quaternion.Euler(0f, 0f, shootAngle + 180f);
@@ -63,21 +68,24 @@ public class CentipedeShooting : MonoBehaviour
             Quaternion left2Rotation = Quaternion.Euler(0f, 0f, (shootAngle / 2) + 180f);
             Quaternion right2Rotation = Quaternion.Euler(0f, 0f, (-shootAngle / 2) + 180f);
 
-            // Spawn the left bullet
-            GameObject leftBullet = Instantiate(bulletPrefab, firePoint.position, leftRotation);
-            leftBullet.GetComponent<Rigidbody2D>().velocity = leftRotation * firePoint.right * bulletSpeed;
+            if (!isDead)
+            {
+                // Spawn the left bullet
+                GameObject leftBullet = Instantiate(bulletPrefab, firePoint.position, leftRotation);
+                leftBullet.GetComponent<Rigidbody2D>().velocity = leftRotation * firePoint.right * bulletSpeed;
 
-            // Spawn the right bullet
-            GameObject rightBullet = Instantiate(bulletPrefab, firePoint.position, rightRotation);
-            rightBullet.GetComponent<Rigidbody2D>().velocity = rightRotation * firePoint.right * bulletSpeed;
+                // Spawn the right bullet
+                GameObject rightBullet = Instantiate(bulletPrefab, firePoint.position, rightRotation);
+                rightBullet.GetComponent<Rigidbody2D>().velocity = rightRotation * firePoint.right * bulletSpeed;
 
-            // Spawn the left bullet
-            GameObject left2Bullet = Instantiate(bulletPrefab, firePoint.position, left2Rotation);
-            left2Bullet.GetComponent<Rigidbody2D>().velocity = left2Rotation * firePoint.right * bulletSpeed;
+                // Spawn the left bullet
+                GameObject left2Bullet = Instantiate(bulletPrefab, firePoint.position, left2Rotation);
+                left2Bullet.GetComponent<Rigidbody2D>().velocity = left2Rotation * firePoint.right * bulletSpeed;
 
-            // Spawn the right bullet
-            GameObject right2Bullet = Instantiate(bulletPrefab, firePoint.position, right2Rotation);
-            right2Bullet.GetComponent<Rigidbody2D>().velocity = right2Rotation * firePoint.right * bulletSpeed;
+                // Spawn the right bullet
+                GameObject right2Bullet = Instantiate(bulletPrefab, firePoint.position, right2Rotation);
+                right2Bullet.GetComponent<Rigidbody2D>().velocity = right2Rotation * firePoint.right * bulletSpeed;
+            }
         }
     }
 }
