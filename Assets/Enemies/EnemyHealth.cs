@@ -27,6 +27,10 @@ public class EnemyHealth : MonoBehaviour
         if (gameObject.GetComponent<Boss>())
         {
             maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.05, gameManager.level));
+        } else
+        {
+            int rank = GameObject.Find("PenaltyHolder").GetComponent<MinionHealth>().currentRank;
+            maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.10, rank));
         }
         currentHealth = maxHealth;
         audioManager = FindObjectOfType<AudioManager>();

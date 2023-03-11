@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 4188515970739190812}
   - component: {fileID: 8809428905568778062}
   - component: {fileID: 616841541846335221}
+  - component: {fileID: 7560379413718289068}
   m_Layer: 5
   m_Name: Penalties
   m_TagString: Untagged
@@ -1289,6 +1290,7 @@ MonoBehaviour:
   - {fileID: 4188515970739190812}
   - {fileID: 8809428905568778062}
   - {fileID: 616841541846335221}
+  - {fileID: 7560379413718289068}
 --- !u!114 &-3707027912265381426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,6 +1407,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penaltyName: More Spiderling Minions
   description: Increases the number of Spiderlings that spawn by 10%
+  currentRank: 0
+  maxRank: 5
+--- !u!114 &7560379413718289068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218782252434281414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad41d8e2508535b41a0b3bed8b43e3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyName: Minion Health UP
+  description: Increases enemy minion health by 10%
   currentRank: 0
   maxRank: 5
 --- !u!1 &4218782252460827351
