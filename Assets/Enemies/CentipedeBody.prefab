@@ -17,10 +17,9 @@ GameObject:
   - component: {fileID: 3740115284861887604}
   - component: {fileID: 3740115284861887605}
   - component: {fileID: 3740115284861887609}
-  - component: {fileID: 788082148}
-  - component: {fileID: 485233314}
+  - component: {fileID: 2127325520}
   m_Layer: 0
-  m_Name: CentipedeBoss
+  m_Name: CentipedeBody
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1805588113206198263, guid: 57b46812ec21b064381e8d69222fbae3, type: 3}
+  m_Sprite: {fileID: -3417730484027152527, guid: 57b46812ec21b064381e8d69222fbae3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -211,7 +210,7 @@ MonoBehaviour:
   shootAngle: 35
   bulletSpeed: 20
   isDead: 0
---- !u!95 &788082148
+--- !u!95 &2127325520
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -221,7 +220,7 @@ Animator:
   m_GameObject: {fileID: 3740115284861887566}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c8cde3d5a3383044f9df69f583473eee, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc55d5b06b05fb34399d94c8ff036139, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -230,20 +229,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &485233314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3740115284861887566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84fddc5c311a8934b8de4730cb1bcf0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodySegmentPrefab: {fileID: 3740115284861887566, guid: b6516ae5902436e419b8721d16b5aea3, type: 3}
-  numSegments: 5
 --- !u!1 &3740115284903367179
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,7 +31,13 @@ public class CentipedeMovement : MonoBehaviour
 
     void Update()
     {
-        speed = baseSpeed * (2 - ((float)enemyHealth.currentHealth / (float)enemyHealth.maxHealth));
+        if(name == "CentipedeBoss")
+        {
+            speed = baseSpeed * (2 - ((float)enemyHealth.currentHealth / (float)enemyHealth.maxHealth));
+        } else
+        {
+            speed = GameObject.Find("CentipedeBoss").GetComponent<CentipedeMovement>().speed;
+        }
         float xPos = transform.position.x;
 
         // Move left/right within the boundaries
