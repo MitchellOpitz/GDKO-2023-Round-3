@@ -435,7 +435,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1721257063650758883, guid: a9cbac9fbde53994495c9b5b305e0116, type: 3}
   projectileSpeed: 10
   fireRate: 0.5
-  damage: 7
+  damage: 35
   upgradeRank: 0
   bang: {fileID: 4496929310933689775, guid: 73531201148cf7c42954bca61c742c45, type: 3}
   directionOffset: 0
