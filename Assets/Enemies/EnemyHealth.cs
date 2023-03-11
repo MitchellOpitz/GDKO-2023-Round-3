@@ -24,7 +24,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.1, gameManager.level));
+        if (gameObject.GetComponent<Boss>())
+        {
+            maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.1, gameManager.level));
+        }
         currentHealth = maxHealth;
         audioManager = FindObjectOfType<AudioManager>();
     }

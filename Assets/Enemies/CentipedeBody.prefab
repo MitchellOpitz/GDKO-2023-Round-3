@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb11a7db75b51c4c882ae305eea1f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 33
   currentHealth: 0
-  points: 100
+  points: 50
   animation: {fileID: 0}
   clip: {fileID: 8300000, guid: 928a53185b4d15d4187a26910cd3ac0e, type: 3}
   healthBarImage: {fileID: 3740115286482589798}

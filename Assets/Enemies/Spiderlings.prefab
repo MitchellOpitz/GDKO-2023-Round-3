@@ -239,11 +239,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb11a7db75b51c4c882ae305eea1f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 20
   currentHealth: 0
   points: 25
   animation: {fileID: 0}
+  clip: {fileID: 0}
   healthBarImage: {fileID: 4882892467881490810}
+  healthBar: {fileID: 0}
 --- !u!114 &-349282362806373162
 MonoBehaviour:
   m_ObjectHideFlags: 0
