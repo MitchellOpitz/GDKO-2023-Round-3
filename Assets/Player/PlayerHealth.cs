@@ -33,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             currentHealth--;
+            if (!collider.gameObject.GetComponent<Boss>())
+            {
+                Destroy(collider.gameObject);
+            }
         }
     }
 }
