@@ -15965,6 +15965,7 @@ GameObject:
   - component: {fileID: 1764463731}
   - component: {fileID: 1764463725}
   - component: {fileID: 1764463728}
+  - component: {fileID: 1764463732}
   m_Layer: 0
   m_Name: PenaltyHolder
   m_TagString: Untagged
@@ -16022,6 +16023,7 @@ MonoBehaviour:
   - {fileID: 1764463731}
   - {fileID: 1764463725}
   - {fileID: 1764463728}
+  - {fileID: 1764463732}
 --- !u!114 &1764463727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16108,6 +16110,22 @@ MonoBehaviour:
   description: Increases enemy movement speed by 10%
   currentRank: 0
   maxRank: 10
+--- !u!114 &1764463732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764463723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f808930c418e4934eb7c67fb8f5984d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyName: More Spiderling Minions
+  description: Increases the number of Spiderlings that spawn by 10%
+  currentRank: 0
+  maxRank: 5
 --- !u!1 &1786669377
 GameObject:
   m_ObjectHideFlags: 0

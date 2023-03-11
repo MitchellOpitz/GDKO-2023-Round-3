@@ -67,6 +67,15 @@ public class PenaltiesShop : MonoBehaviour
             }
         }
 
+        // If Spiderling spawner not started
+        if (randomNumber == 6)
+        {
+            if (playerManager.penalties[1].currentRank == 0)
+            {
+                return RollAbility();
+            }
+        }
+
         if (playerManager.penalties[(int)randomNumber].currentRank != penalties[(int)randomNumber].maxRank)
         {
             return penalties[(int)randomNumber];

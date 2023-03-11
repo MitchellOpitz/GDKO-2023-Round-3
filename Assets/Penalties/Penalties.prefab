@@ -1177,6 +1177,7 @@ GameObject:
   - component: {fileID: 6682642829217427801}
   - component: {fileID: 4188515970739190812}
   - component: {fileID: 8809428905568778062}
+  - component: {fileID: 616841541846335221}
   m_Layer: 5
   m_Name: Penalties
   m_TagString: Untagged
@@ -1287,6 +1288,7 @@ MonoBehaviour:
   - {fileID: 6682642829217427801}
   - {fileID: 4188515970739190812}
   - {fileID: 8809428905568778062}
+  - {fileID: 616841541846335221}
 --- !u!114 &-3707027912265381426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,6 +1389,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penaltyName: More Hornet Minions
   description: Increases the number of Hornets that spawn by 10%
+  currentRank: 0
+  maxRank: 5
+--- !u!114 &616841541846335221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218782252434281414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f808930c418e4934eb7c67fb8f5984d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyName: More Spiderling Minions
+  description: Increases the number of Spiderlings that spawn by 10%
   currentRank: 0
   maxRank: 5
 --- !u!1 &4218782252460827351

@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiderPrefab: {fileID: 4882892467470893993, guid: ef6e46d1af77a5f4384beab6f6dc0588, type: 3}
-  spawnInterval: 5
+  spawnInterval: 3
   isCrawler: 0
+  isHornet: 0
