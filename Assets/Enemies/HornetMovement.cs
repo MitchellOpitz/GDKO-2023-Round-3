@@ -36,7 +36,7 @@ public class HornetMovement : MonoBehaviour
                 break;
             case "right":
                 direction = Vector2.left;
-                transform.rotation = Quaternion.EulerRotation(0, 180f, 0);
+                transform.localScale = new Vector3(0, -1, 0);
                 break;
             default:
                 Debug.LogWarning($"Invalid direction: {dir}");

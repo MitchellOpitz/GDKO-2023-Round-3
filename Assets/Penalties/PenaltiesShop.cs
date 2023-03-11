@@ -49,6 +49,7 @@ public class PenaltiesShop : MonoBehaviour
         float randomNumber = Mathf.Floor(Random.Range(0f, penalties.Length));
         playerManager = GameObject.Find("PenaltyHolder").GetComponent<PlayerManager>();
 
+        // If Crawlers spawner not started
         if(randomNumber == 4)
         {
             if(playerManager.penalties[2].currentRank == 0)
@@ -56,6 +57,16 @@ public class PenaltiesShop : MonoBehaviour
                 return RollAbility();
             }
         }
+
+        // If Hornet spawner not started
+        if (randomNumber == 5)
+        {
+            if (playerManager.penalties[0].currentRank == 0)
+            {
+                return RollAbility();
+            }
+        }
+
         if (playerManager.penalties[(int)randomNumber].currentRank != penalties[(int)randomNumber].maxRank)
         {
             return penalties[(int)randomNumber];
