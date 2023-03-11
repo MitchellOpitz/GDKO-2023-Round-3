@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3740115284861887604}
   - component: {fileID: 3740115284861887605}
   - component: {fileID: 3740115284861887609}
+  - component: {fileID: 788082148}
   m_Layer: 0
   m_Name: CentipedeBoss
   m_TagString: Enemy
@@ -208,6 +209,26 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1721257063650758883, guid: d473f6e4eff4f57409551da1d8521e57, type: 3}
   shootAngle: 35
   bulletSpeed: 20
+  isDead: 0
+--- !u!95 &788082148
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740115284861887566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8cde3d5a3383044f9df69f583473eee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3740115284903367179
 GameObject:
   m_ObjectHideFlags: 0

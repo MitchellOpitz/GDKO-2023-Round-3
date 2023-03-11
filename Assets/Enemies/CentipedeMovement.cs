@@ -17,6 +17,7 @@ public class CentipedeMovement : MonoBehaviour
     private float yPos = 0f; // the current y position
     public bool flipped;
     private AudioManager audioManager;
+    private Animator animator;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class CentipedeMovement : MonoBehaviour
         flipped = false;
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.ChangeTrack(3, 1f);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -40,6 +42,8 @@ public class CentipedeMovement : MonoBehaviour
             xPos = Mathf.Clamp(xPos, xMin, xMax);
             xDirection *= -1f;
             UpdateFirePoint();
+            animator.SetFloat("xDirection", xDirection);
+            animator.SetFloat("yDirection", 0);
             yPos = nextYPos;
             nextYPos = yPos + Mathf.Sign(yDirection) * 2f;
         }
@@ -52,6 +56,8 @@ public class CentipedeMovement : MonoBehaviour
             yPos = Mathf.Clamp(yPos, yMin, yMax);
             yDirection *= -1f;
             nextYPos = yPos + Mathf.Sign(yDirection) * 2f;
+            animator.SetFloat("xDirection", 0);
+            animator.SetFloat("yDirection", yDirection);
         }
 
         // Update the position of the GameObject
