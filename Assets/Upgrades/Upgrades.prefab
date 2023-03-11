@@ -1210,6 +1210,7 @@ GameObject:
   - component: {fileID: 6500389457612694754}
   - component: {fileID: -7540953903354382801}
   - component: {fileID: 918687779103379318}
+  - component: {fileID: -7124745713884710637}
   m_Layer: 5
   m_Name: Upgrades
   m_TagString: Untagged
@@ -1318,6 +1319,7 @@ MonoBehaviour:
   - {fileID: 6500389457612694754}
   - {fileID: -7540953903354382801}
   - {fileID: 918687779103379318}
+  - {fileID: -7124745713884710637}
 --- !u!114 &6751498323413251487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,6 +1386,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Spread Shot Up
   description: "Increases the number of shots fired 1.  Shots fired in a 10\xB0 spread."
+  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 5
+--- !u!114 &-7124745713884710637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500389457612694776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0e0ebd09ae2f04f8f42b49cc521d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Score x2
+  description: Doubles the score of every enemy
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
   currentRank: 0
   maxRank: 5
