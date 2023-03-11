@@ -26,10 +26,21 @@ public class EnemyHealth : MonoBehaviour
     {
         if (gameObject.GetComponent<Boss>())
         {
-            maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.1, gameManager.level));
+            maxHealth = (int)(maxHealth * (float)Math.Pow(1 + 0.05, gameManager.level));
         }
         currentHealth = maxHealth;
         audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    public void Update()
+    {
+        if(transform.position.y > 10 ||
+            transform.position.y < -35 ||
+            transform.position.x > 60 ||
+            transform.position.x < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(int damage)
