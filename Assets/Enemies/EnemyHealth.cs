@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public int points;
     public Animation animation;
+    public AudioClip clip;
 
     public Image healthBarImage;
     public GameObject healthBar;
@@ -60,10 +61,11 @@ public class EnemyHealth : MonoBehaviour
             if(bosses.Length == 1)
             {
                 audioManager = FindObjectOfType<AudioManager>();
-                audioManager.ChangeTrack(0, .75f);
+                audioManager.ChangeTrack(0, .5f);
             }
             StartCoroutine(StartUpgradePanel());
             gameManager.AddScore(points);
+            GameObject.Find("SoundFX").GetComponent<AudioSource>().PlayOneShot(clip);
         } else
         {
             gameManager.AddScore(points);

@@ -10,6 +10,7 @@ public class HealthBar : MonoBehaviour
 
     public Sprite midHealthBar;
     public Sprite lowHealthBar;
+    public AudioClip clip;
 
     private Image[] blockImages;
 
@@ -62,6 +63,9 @@ public class HealthBar : MonoBehaviour
         currentHealth = health;
         if (currentHealth == 0)
         {
+            GameObject.Find("SoundFX").GetComponent<AudioSource>().PlayOneShot(clip);
+            AudioManager audioManager = FindObjectOfType<AudioManager>();
+            audioManager.ChangeTrack(0, .5f);
             Destroy(GameObject.Find("Player"));
         }
     }

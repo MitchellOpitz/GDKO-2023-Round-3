@@ -289,6 +289,7 @@ MonoBehaviour:
   currentHealth: 0
   points: 100
   animation: {fileID: 0}
+  clip: {fileID: 8300000, guid: 928a53185b4d15d4187a26910cd3ac0e, type: 3}
   healthBarImage: {fileID: 4882892467881490810}
   healthBar: {fileID: 4882892467401767961}
 --- !u!114 &-349282362806373162
@@ -325,6 +326,7 @@ MonoBehaviour:
   minion: {fileID: 4882892467470893993, guid: ef6e46d1af77a5f4384beab6f6dc0588, type: 3}
   cam: {fileID: 0}
   offsetAngle: 25
+  isDead: 0
 --- !u!95 &1617631301
 Animator:
   serializedVersion: 3

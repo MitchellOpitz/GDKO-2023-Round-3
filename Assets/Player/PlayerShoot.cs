@@ -12,6 +12,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bang;
     public float directionOffset;
     public float offset;
+    public AudioClip shootSound;
+    public AudioSource source;
 
     private Animator animator;
     private PlayerDirection dir;
@@ -78,5 +80,6 @@ public class PlayerShoot : MonoBehaviour
             Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
             projectileRigidbody.velocity = projectile.transform.right * projectileSpeed;
         }
+        source.PlayOneShot(shootSound);
     }
 }

@@ -439,6 +439,7 @@ MonoBehaviour:
   currentHealth: 0
   points: 100
   animation: {fileID: 0}
+  clip: {fileID: 8300000, guid: 928a53185b4d15d4187a26910cd3ac0e, type: 3}
   healthBarImage: {fileID: 3125783817528338076}
   healthBar: {fileID: 3125783818754657319}
 --- !u!114 &3125783818928737714
@@ -505,5 +506,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1721257063650758883, guid: d473f6e4eff4f57409551da1d8521e57, type: 3}
   firePoint: {fileID: 3125783818834275712}
   cam: {fileID: 0}
+  isDead: 0
   moveRadius: 10
   numAttacks: 3

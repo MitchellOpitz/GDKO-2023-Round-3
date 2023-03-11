@@ -120,6 +120,7 @@ MonoBehaviour:
   currentHealth: 0
   points: 100
   animation: {fileID: 0}
+  clip: {fileID: 8300000, guid: 928a53185b4d15d4187a26910cd3ac0e, type: 3}
   healthBarImage: {fileID: 3740115286482589798}
   healthBar: {fileID: 3740115285112304550}
 --- !u!114 &3740115284861887601
