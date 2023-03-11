@@ -34,7 +34,7 @@ public class CentipedeMovement : MonoBehaviour
         if(name == "CentipedeBoss")
         {
             speed = baseSpeed * (2 - ((float)enemyHealth.currentHealth / (float)enemyHealth.maxHealth));
-        } else
+        } else if (GameObject.Find("CentipedeBoss"))
         {
             speed = GameObject.Find("CentipedeBoss").GetComponent<CentipedeMovement>().speed;
         }

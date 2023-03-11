@@ -8,7 +8,8 @@ public class Boss : MonoBehaviour
 
     public void StartUpgrades()
     {
-        if (!GameObject.Find("Upgrades(Clone)"))
+        Boss[] bosses = FindObjectsOfType<Boss>();
+        if (!GameObject.Find("Upgrades(Clone)") && bosses.Length == 1)
         {
             Instantiate(upgradesMenu);
             FindObjectOfType<PlayerToggle>().ToggleAbilities(false);

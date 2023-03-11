@@ -51,13 +51,17 @@ public class EnemyHealth : MonoBehaviour
         // Do something when the enemy dies
         if (gameObject.GetComponent<Boss>())
         {
+            Boss[] bosses = FindObjectsOfType<Boss>();
             SetDead();
             healthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
             FindObjectOfType<GameManager>().level++;
-            audioManager = FindObjectOfType<AudioManager>();
-            audioManager.ChangeTrack(0, .75f);
+            if(bosses.Length == 1)
+            {
+                audioManager = FindObjectOfType<AudioManager>();
+                audioManager.ChangeTrack(0, .75f);
+            }
             StartCoroutine(StartUpgradePanel());
             gameManager.AddScore(points);
         } else

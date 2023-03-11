@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3740115284861887606}
   - component: {fileID: 3740115284861887604}
   - component: {fileID: 3740115284861887605}
-  - component: {fileID: 3740115284861887609}
   - component: {fileID: 2127325520}
   m_Layer: 0
   m_Name: CentipedeBody
@@ -193,23 +192,6 @@ CircleCollider2D:
   m_Offset: {x: 0.06555399, y: -0.021668792}
   serializedVersion: 2
   m_Radius: 0.3627642
---- !u!114 &3740115284861887609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3740115284861887566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec2190cd4708824a86f53cc762d2205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 3740115284903367178}
-  bulletPrefab: {fileID: 1721257063650758883, guid: d473f6e4eff4f57409551da1d8521e57, type: 3}
-  shootAngle: 35
-  bulletSpeed: 20
-  isDead: 0
 --- !u!95 &2127325520
 Animator:
   serializedVersion: 3
