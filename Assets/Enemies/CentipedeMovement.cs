@@ -43,7 +43,6 @@ public class CentipedeMovement : MonoBehaviour
             xDirection *= -1f;
             UpdateFirePoint();
             animator.SetFloat("xDirection", xDirection);
-            animator.SetFloat("yDirection", 0);
             yPos = nextYPos;
             nextYPos = yPos + Mathf.Sign(yDirection) * 2f;
         }
@@ -56,8 +55,6 @@ public class CentipedeMovement : MonoBehaviour
             yPos = Mathf.Clamp(yPos, yMin, yMax);
             yDirection *= -1f;
             nextYPos = yPos + Mathf.Sign(yDirection) * 2f;
-            animator.SetFloat("xDirection", 0);
-            animator.SetFloat("yDirection", yDirection);
         }
 
         // Update the position of the GameObject
