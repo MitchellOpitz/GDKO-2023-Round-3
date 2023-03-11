@@ -22,15 +22,6 @@ public class SpiderSpawner : MonoBehaviour
         currentLevel = FindObjectOfType<GameManager>().level;
     }
 
-    private void Update()
-    {
-        if (currentLevel != FindObjectOfType<GameManager>().level)
-        {
-            currentLevel = FindObjectOfType<GameManager>().level;
-            spawnInterval = spawnInterval * (1 - (0.01f * currentLevel));
-        }
-    }
-
     IEnumerator SpawnMinions()
     {
         while (true)
@@ -58,7 +49,6 @@ public class SpiderSpawner : MonoBehaviour
             if (isCrawler)
             {
                 GameObject crawler = Instantiate(spiderPrefab, spawnPosition, Quaternion.identity);
-                crawler.GetComponent<CrawlerMovement>().Move(direction);
                 crawler.GetComponent<CrawlerMovement>().Move(direction);
             }
             if (isHornet)

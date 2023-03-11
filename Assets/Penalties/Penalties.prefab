@@ -1171,12 +1171,11 @@ GameObject:
   - component: {fileID: 4218782252434281408}
   - component: {fileID: 4218782252434281409}
   - component: {fileID: 4218782252434281437}
-  - component: {fileID: 4218782252434281438}
-  - component: {fileID: 4218782252434281439}
   - component: {fileID: -3707027912265381426}
   - component: {fileID: 4061794118375448322}
   - component: {fileID: 1252656751752168778}
   - component: {fileID: 6682642829217427801}
+  - component: {fileID: 4188515970739190812}
   m_Layer: 5
   m_Name: Penalties
   m_TagString: Untagged
@@ -1281,44 +1280,11 @@ MonoBehaviour:
   penaltyPanel2: {fileID: 4218782251536577548}
   penaltyPanel3: {fileID: 4218782251733094030}
   penalties:
-  - {fileID: 4218782252434281438}
-  - {fileID: 4218782252434281439}
   - {fileID: -3707027912265381426}
   - {fileID: 4061794118375448322}
   - {fileID: 1252656751752168778}
   - {fileID: 6682642829217427801}
---- !u!114 &4218782252434281438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4218782252434281414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d15bab93ab3c84dad8d1a0d222ad30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  penaltyName: Movement Speed Down
-  description: Decreases movement speed by 10%
-  currentRank: 0
-  maxRank: 5
---- !u!114 &4218782252434281439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4218782252434281414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10cae85c7059b0e4cae6e3f62ea65c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  penaltyName: Fire Rate Down
-  description: Decreases fire rate by 10%
-  currentRank: 0
-  maxRank: 5
+  - {fileID: 4188515970739190812}
 --- !u!114 &-3707027912265381426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1389,6 +1355,22 @@ MonoBehaviour:
   description: Increases enemy movement speed by 10%
   currentRank: 0
   maxRank: 10
+--- !u!114 &4188515970739190812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218782252434281414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50a14f4652c98245963d9e539b7902d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyName: More Crawler Minions
+  description: Increases the number of Crawlers that spawn by 10%
+  currentRank: 0
+  maxRank: 5
 --- !u!1 &4218782252460827351
 GameObject:
   m_ObjectHideFlags: 0

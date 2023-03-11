@@ -15959,12 +15959,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1764463724}
   - component: {fileID: 1764463726}
-  - component: {fileID: 1764463725}
-  - component: {fileID: 1764463728}
   - component: {fileID: 1764463730}
   - component: {fileID: 1764463729}
   - component: {fileID: 1764463727}
   - component: {fileID: 1764463731}
+  - component: {fileID: 1764463725}
   m_Layer: 0
   m_Name: PenaltyHolder
   m_TagString: Untagged
@@ -15995,11 +15994,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1764463723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d15bab93ab3c84dad8d1a0d222ad30, type: 3}
+  m_Script: {fileID: 11500000, guid: d50a14f4652c98245963d9e539b7902d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penaltyName: Movement Speed Down
-  description: Decreases movement speed by 10%
+  penaltyName: More Crawler Minions
+  description: Increases the number of Crawlers that spawn by 10%
   currentRank: 0
   maxRank: 5
 --- !u!114 &1764463726
@@ -16016,12 +16015,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades: []
   penalties:
-  - {fileID: 1764463725}
-  - {fileID: 1764463728}
   - {fileID: 1764463730}
   - {fileID: 1764463729}
   - {fileID: 1764463727}
   - {fileID: 1764463731}
+  - {fileID: 1764463725}
 --- !u!114 &1764463727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16040,22 +16038,6 @@ MonoBehaviour:
   currentRank: 0
   maxRank: 1
   spawner: {fileID: 0}
---- !u!114 &1764463728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764463723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10cae85c7059b0e4cae6e3f62ea65c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  penaltyName: Fire Rate Down
-  description: Decreases fire rate by 10%
-  currentRank: 0
-  maxRank: 0
 --- !u!114 &1764463729
 MonoBehaviour:
   m_ObjectHideFlags: 0
