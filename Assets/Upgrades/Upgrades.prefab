@@ -1211,6 +1211,7 @@ GameObject:
   - component: {fileID: -7540953903354382801}
   - component: {fileID: 918687779103379318}
   - component: {fileID: -7124745713884710637}
+  - component: {fileID: 8421490176413703188}
   m_Layer: 5
   m_Name: Upgrades
   m_TagString: Untagged
@@ -1320,6 +1321,7 @@ MonoBehaviour:
   - {fileID: -7540953903354382801}
   - {fileID: 918687779103379318}
   - {fileID: -7124745713884710637}
+  - {fileID: 8421490176413703188}
 --- !u!114 &6751498323413251487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,6 +1408,23 @@ MonoBehaviour:
   penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
   currentRank: 0
   maxRank: 5
+--- !u!114 &8421490176413703188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500389457612694776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af713be5eebd5de449a99d0df0757780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Health Per Level
+  description: Restores 1 health each time you defeat a boss
+  penaltiesMenu: {fileID: 4218782252434281414, guid: 7ceac053f1caede43bc677be47e0faf7, type: 3}
+  currentRank: 0
+  maxRank: 1
 --- !u!1 &6500389457669040001
 GameObject:
   m_ObjectHideFlags: 0

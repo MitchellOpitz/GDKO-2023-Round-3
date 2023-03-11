@@ -20,6 +20,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
         healthBar.currentHealth = currentHealth;
         if (isInvulnerable)
         {

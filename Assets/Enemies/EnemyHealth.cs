@@ -80,6 +80,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 audioManager = FindObjectOfType<AudioManager>();
                 audioManager.ChangeTrack(0, .5f);
+                CheckRestoreHealth();
             }
             StartCoroutine(StartUpgradePanel());
             gameManager.AddScore(points);
@@ -113,6 +114,19 @@ public class EnemyHealth : MonoBehaviour
         if (gameObject.GetComponent<HornetAttacks>())
         {
             gameObject.GetComponent<HornetAttacks>().isDead = true;
+        }
+    }
+
+    private void CheckRestoreHealth()
+    {
+        PlayerHealth player = FindObjectOfType<PlayerHealth>();
+        int rank = GameObject.Find("UpgradeHolder").GetComponent<HealthPerLevel>().currentRank;
+        if(rank == 1)
+        {
+            if(player.currentHealth < maxHealth - 2)
+            {
+                player.currentHealth++;
+            }
         }
     }
 }

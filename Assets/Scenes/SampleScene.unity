@@ -437,7 +437,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1721257063650758883, guid: a9cbac9fbde53994495c9b5b305e0116, type: 3}
   projectileSpeed: 10
   fireRate: 0.5
-  damage: 7
+  damage: 35
   upgradeRank: 0
   bang: {fileID: 4496929310933689775, guid: 73531201148cf7c42954bca61c742c45, type: 3}
   directionOffset: 0
@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 828153197}
   - component: {fileID: 828153200}
   - component: {fileID: 828153201}
+  - component: {fileID: 828153202}
   m_Layer: 0
   m_Name: UpgradeHolder
   m_TagString: Untagged
@@ -820,6 +821,7 @@ MonoBehaviour:
   - {fileID: 828153197}
   - {fileID: 828153200}
   - {fileID: 828153201}
+  - {fileID: 828153202}
   penalties: []
 --- !u!114 &828153200
 MonoBehaviour:
@@ -855,6 +857,23 @@ MonoBehaviour:
   penaltiesMenu: {fileID: 0}
   currentRank: 0
   maxRank: 5
+--- !u!114 &828153202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828153194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af713be5eebd5de449a99d0df0757780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: Health Per Level
+  description: Restores 1 health each time you defeat a boss
+  penaltiesMenu: {fileID: 0}
+  currentRank: 0
+  maxRank: 1
 --- !u!1 &933489333
 GameObject:
   m_ObjectHideFlags: 0
