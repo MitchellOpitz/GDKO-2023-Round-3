@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 4573854544696069073}
   - component: {fileID: 1617631301}
   - component: {fileID: 472423197}
+  - component: {fileID: 1612886615}
   m_Layer: 0
   m_Name: SpiderBoss
   m_TagString: Enemy
@@ -169,6 +170,7 @@ Transform:
   m_Children:
   - {fileID: 4882892467401767962}
   - {fileID: 7110407865062269740}
+  - {fileID: 7051845245466194589}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -360,6 +362,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phase2threshold: 0.66
   phase3threshold: 0.33
+--- !u!114 &1612886615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882892467470893993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d75e81e55fc4047b6ea903f78227eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 7051845245466194658}
+  maxEmissionRate: 10
+  bossHealthPercentageThreshold: 0.5
 --- !u!1 &4882892467881490808
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,3 +527,70 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &862897575743423417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4882892467470893997}
+    m_Modifications:
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.018
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711833, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_Name
+      value: SmokeParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+--- !u!4 &7051845245466194589 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+  m_PrefabInstance: {fileID: 862897575743423417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7051845245466194658 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7648395462779711835, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+  m_PrefabInstance: {fileID: 862897575743423417}
+  m_PrefabAsset: {fileID: 0}

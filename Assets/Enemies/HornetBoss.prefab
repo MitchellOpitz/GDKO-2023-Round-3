@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 3125783818928737715}
   - component: {fileID: 3125783818928737709}
   - component: {fileID: 283642986}
+  - component: {fileID: 3413595705032033239}
   m_Layer: 0
   m_Name: HornetBoss
   m_TagString: Enemy
@@ -319,6 +320,7 @@ Transform:
   m_Children:
   - {fileID: 3125783818754657318}
   - {fileID: 3125783818834275712}
+  - {fileID: 7648395462830886281}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -509,3 +511,85 @@ MonoBehaviour:
   isDead: 0
   moveRadius: 10
   numAttacks: 3
+--- !u!114 &3413595705032033239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125783818928737718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d75e81e55fc4047b6ea903f78227eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 7648395462830886390}
+  maxEmissionRate: 10
+  bossHealthPercentageThreshold: 0.5
+--- !u!1001 &51330221
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3125783818928737716}
+    m_Modifications:
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648395462779711833, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+      propertyPath: m_Name
+      value: SmokeParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+--- !u!4 &7648395462830886281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7648395462779711780, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+  m_PrefabInstance: {fileID: 51330221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7648395462830886390 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7648395462779711835, guid: 0b6649d1cd2f7564d97a905b9f115b1c, type: 3}
+  m_PrefabInstance: {fileID: 51330221}
+  m_PrefabAsset: {fileID: 0}

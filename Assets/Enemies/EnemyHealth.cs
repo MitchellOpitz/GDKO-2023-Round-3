@@ -75,6 +75,7 @@ public class EnemyHealth : MonoBehaviour
             healthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<BossParticleController>().OnBossDefeated();
             FindObjectOfType<GameManager>().level++;
             if(bosses.Length == 1)
             {
