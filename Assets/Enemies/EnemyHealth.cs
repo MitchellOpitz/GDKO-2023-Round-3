@@ -76,6 +76,10 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<BossParticleController>().OnBossDefeated();
+            if(name == "CentipedeBody(Clone)")
+            {
+                transform.FindChild("RubbleParticles").GetComponent<ParticleSystem>().Stop();
+            }
             FindObjectOfType<GameManager>().level++;
             if(bosses.Length == 1)
             {
