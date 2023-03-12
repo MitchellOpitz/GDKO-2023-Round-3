@@ -47,6 +47,13 @@ public class CentipedeMovement : MonoBehaviour
             // If we hit a boundary, move down and reverse direction
             xPos = Mathf.Clamp(xPos, xMin, xMax);
             xDirection *= -1f;
+            if(xDirection == 1)
+            {
+                transform.FindChild("RubbleParticles").localScale = new Vector3(1, 1, 1f);
+            } else
+            {
+                transform.FindChild("RubbleParticles").localScale = new Vector3(1, 1, -1f);
+            }
             UpdateFirePoint();
             animator.SetFloat("xDirection", xDirection);
             yPos = nextYPos;
