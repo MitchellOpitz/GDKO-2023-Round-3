@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public float speed = 10f;
     public int damage = 1;
     public Vector3 direction;
+    public ParticleSystem particles;
 
     private Rigidbody2D rb;
     private Camera mainCamera;
@@ -55,6 +56,8 @@ public class Bullet : MonoBehaviour
         {
             Dummy enemy = collision.GetComponent<Dummy>();
             enemy.TakeDamage(damage);
+            ParticleSystem particle = Instantiate(particles);
+            particle.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             Destroy(gameObject);
         } else
         {
@@ -63,6 +66,8 @@ public class Bullet : MonoBehaviour
             {
                 EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
                 enemy.TakeDamage(damage);
+                ParticleSystem particle = Instantiate(particles);
+                particle.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
                 Destroy(gameObject);
             }
         }
