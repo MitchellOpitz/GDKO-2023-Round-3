@@ -7,10 +7,13 @@ public class HealthBar : MonoBehaviour
     public int currentHealth;
     public int blockWidth;
     public int numBlocks;
+    public GameObject gameOverScreen;
 
     public Sprite midHealthBar;
     public Sprite lowHealthBar;
     public AudioClip clip;
+    public GameObject healthBarObject;
+    public GameObject scoreObject;
 
     private Image[] blockImages;
 
@@ -66,6 +69,9 @@ public class HealthBar : MonoBehaviour
             GameObject.Find("SoundFX").GetComponent<AudioSource>().PlayOneShot(clip);
             AudioManager audioManager = FindObjectOfType<AudioManager>();
             audioManager.ChangeTrack(0, .5f);
+            healthBarObject.SetActive(false);
+            scoreObject.SetActive(false);
+            gameOverScreen.SetActive(true);
             Destroy(GameObject.Find("Player"));
         }
     }

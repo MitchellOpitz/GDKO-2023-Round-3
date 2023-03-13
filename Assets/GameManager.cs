@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public float level = 0;
     public float scoreMultiplier = 1;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverScoreText;
 
     private float score = 0;
 
@@ -16,5 +17,6 @@ public class GameManager : MonoBehaviour
     {
         score += Mathf.Floor(amount * scoreMultiplier);
         scoreText.text = "Score: " + score;
+        gameOverScoreText.text = score.ToString();
     }
 }
