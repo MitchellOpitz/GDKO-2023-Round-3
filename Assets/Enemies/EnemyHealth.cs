@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public int points;
     public Animation animation;
     public AudioClip clip;
+    public AudioClip minionDeathSound;
 
     public Image healthBarImage;
     public GameObject healthBar;
@@ -92,6 +93,7 @@ public class EnemyHealth : MonoBehaviour
             GameObject.Find("SoundFX").GetComponent<AudioSource>().PlayOneShot(clip);
         } else
         {
+
             gameManager.AddScore(points);
             Destroy(gameObject);
         }
@@ -101,6 +103,7 @@ public class EnemyHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         gameObject.GetComponent<Boss>().StartUpgrades();
+        GameObject.Find("SoundFX").GetComponent<AudioSource>().PlayOneShot(minionDeathSound);
         Destroy(gameObject);
     }
 

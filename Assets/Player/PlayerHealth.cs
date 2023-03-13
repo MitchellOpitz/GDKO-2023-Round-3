@@ -7,15 +7,18 @@ public class PlayerHealth : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth;
+    public AudioClip damageSound;
 
     private HealthBar healthBar;
     private bool isInvulnerable = false;
+    private AudioSource audioSource;
 
     private void Start()
     {
         currentHealth = maxHealth;
         healthBar = FindObjectOfType<HealthBar>();
         healthBar.maxHealth = maxHealth;
+        audioSource = GameObject.Find("DamageSound").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -41,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
             isInvulnerable = true;
             StartCoroutine(FlashPlayer());
             healthBar.UpdateHealth(currentHealth);
+            audioSource.PlayOneShot(damageSound);
         }
     }
     IEnumerator FlashPlayer()

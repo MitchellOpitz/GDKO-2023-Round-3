@@ -141,6 +141,8 @@ MonoBehaviour:
   currentHealth: 0
   points: 15
   animation: {fileID: 0}
+  clip: {fileID: 0}
+  minionDeathSound: {fileID: 8300000, guid: d5363ddfd57da7541812c26ce99d0582, type: 3}
   healthBarImage: {fileID: 3871540756346369590}
   healthBar: {fileID: 0}
 --- !u!114 &8142879041834758318
